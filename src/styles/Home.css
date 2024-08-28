@@ -1,0 +1,50 @@
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #d1d5db; 
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .home-title {
+    font-size: 2rem;
+    margin: 10px 0;
+  }
+  
+  .home-name {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 5px 0;
+  }
+  
+  .home-role {
+    font-size: 1.5rem;
+    color: #10b981; 
+    margin: 5px 0 20px;
+  }
+  
+  .home-description {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: #9ca3af; 
+  }
+  
+  .home-links {
+    margin-top: 20px;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: #10b981;
+  }
+  
+  .home-links a {
+    color: #0ea5e9;
+    text-decoration: none;
+  }
+  
+  .home-links a:hover {
+    text-decoration: underline;
+  }
+  
