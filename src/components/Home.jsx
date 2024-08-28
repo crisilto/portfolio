@@ -3,6 +3,9 @@ import '../styles/Home.css';
 const Home = () => {
   return (
     <div className="home-container">
+      <div className="contact-photo">
+        <img src="src/assets/cv.jpg" alt="Cristina Silvestre" className="avatar" />
+      </div>
       <h1 className="home-title">
         Hi there <span role="img" aria-label="wave">👋</span> I&apos;m
       </h1>

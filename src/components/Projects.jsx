@@ -10,10 +10,22 @@ const Projects = () => {
       demoUrl: 'https://crisilto.github.io/portfolio',
     },
     {
-      name: 'E-commerce Store',
-      description: 'An online store built with React and Node.js.',
-      githubUrl: 'https://github.com/crisilto/ecommerce',
-      demoUrl: 'https://ecommerce-example.com',
+      name: 'Dev365',
+      description: '2nd DAW Final project - DEV365 A complete website with casino games.',
+      githubUrl: 'https://github.com/crisilto/dev365',
+      //demoUrl: 'https://',
+    },
+    {
+      name: 'Paintribution',
+      description: 'Github contributions panel clone. Click to relieve stress!',
+      githubUrl: 'https://github.com/crisilto/paintribution',
+      demoUrl: 'https://paintribution.vercel.app',
+    },
+    {
+      name: 'Vidly',
+      description: 'A simple but functional video library.',
+      githubUrl: 'https://github.com/crisilto/movies-with-react',
+      demoUrl: 'https://movies-with-react-phi.vercel.app/movies',
     },
   ];
 

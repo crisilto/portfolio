@@ -27,9 +27,6 @@ const Contact = () => {
             <button type="submit" className="submit-button">Send Message</button>
           </form>
         </div>
-        <div className="contact-photo">
-          <img src="https://via.placeholder.com/150" alt="Your Name" className="avatar" />
-        </div>
       </div>
     </div>
   );

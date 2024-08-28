@@ -33,7 +33,7 @@
   }
   
   .stack-item:hover {
-    transform: scale(1.1); 
+    /*transform: scale(1.1);*/
     background-color: #2d2f3b; 
   }
   
