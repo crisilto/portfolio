@@ -82,7 +82,7 @@ const Layout = ({ children, activeTabs, currentTab, onTabClick, onAddTab, onClos
 
       <div className="bottom-bar">
         <div className="bottom-left">
-          <span>crisilto1997@gmail.com</span>
+          <span><a href='#' onClick={()=>  onTabClick('_contact')}>crisilto1997@gmail.com</a></span>
         </div>
         <div className="bottom-right">
           <a href="https://github.com/crisilto" target="_blank" rel="noopener noreferrer">
