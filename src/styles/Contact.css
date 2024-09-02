@@ -1,68 +1,82 @@
 .contact-container {
-    padding: 20px;
-    background-color: #0e101c; 
-    border-radius: 10px;
-    margin: 20px;
-    color: #d1d5db; 
-  }
-  
-  .contact-title {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #10b981; 
-    text-align: center;
-  }
-  
-  .contact-content {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .contact-form {
-    flex: 1;
-    min-width: 280px;
-  }
-  
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  .form-group label {
-    display: block;
-    margin-bottom: 5px;
-    color: #9ca3af; 
-  }
-  
-  .form-group input,
-  .form-group textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #2d2f3b;
-    border-radius: 5px;
-    background-color: #1f2333;
-    color: #d1d5db;
-  }
-  
-  .form-group input:focus,
-  .form-group textarea:focus {
-    outline: none;
-    border-color: #10b981; 
-  }
-  
-  .submit-button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #10b981;
-    color: #fff;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .submit-button:hover {
-    background-color: #059669; 
-  }
+  padding: 20px;
+  background-color: #0e101c;
+  border-radius: 10px;
+  margin: 30px 60px;
+  color: #d1d5db;
+}
+
+.contact-title {
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: #10b981;
+  text-align: center;
+}
+
+.contact-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  background-color: #1f2333;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 800px;
+}
+
+.contact-form {
+  width: 100%;
+  min-width: 800px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #9ca3af;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #2d2f3b;
+  border-radius: 5px;
+  background-color: #1f2333;
+  color: #d1d5db;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #10b981;
+}
+
+.submit-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #10b981;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+}
+
+.submit-button:hover {
+  background-color: #059669;
+}

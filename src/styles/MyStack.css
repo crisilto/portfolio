@@ -2,49 +2,54 @@
     padding: 20px;
     background-color: #0e101c; 
     border-radius: 10px;
-    margin: 20px;
+    margin: 30px 60px;
     color: #d1d5db; 
   }
   
   .stack-title {
-    font-size: 2rem;
-    margin-bottom: 20px;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
     color: #10b981; 
     text-align: center;
   }
   
   .stack-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 25px;
+    justify-items: center;
+    max-width: 700px;
+    margin: 0 auto; 
   }
   
   .stack-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100px;
-    padding: 10px;
+    justify-content: center;
+    width: 150px;
+    height: 150px;
+    padding: 20px;
     background-color: #1f2333; 
-    border-radius: 8px;
+    border-radius: 12px;
     transition: transform 0.3s ease, background-color 0.3s ease;
     cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   
   .stack-item:hover {
-    /*transform: scale(1.1);*/
+    transform: scale(1.1);
     background-color: #2d2f3b; 
   }
   
   .stack-icon {
-    font-size: 3rem;
+    font-size: 3.5rem;
     color: #0ea5e9;
     margin-bottom: 10px;
   }
   
   .stack-name {
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: #d1d5db;
     text-align: center;
   }
