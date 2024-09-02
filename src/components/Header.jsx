@@ -1,4 +1,3 @@
-// src/components/Header.jsx
 import PropTypes from 'prop-types';
 import '../styles/Header.css';
 
