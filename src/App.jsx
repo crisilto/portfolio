@@ -12,6 +12,7 @@ import Projects from './components/Projects';
 const App = () => {
   const [activeTabs, setActiveTabs] = useState([{ id: '_home', label: '_home' }]);
   const [currentTab, setCurrentTab] = useState('_home');
+  const [language, setLanguage] = useState('en');
 
   const handleTabClick = (tabId) => {
     setCurrentTab(tabId);
@@ -32,18 +33,22 @@ const App = () => {
     }
   };
 
+  const toggleLanguage = () => {
+    setLanguage((prevLanguage) => (prevLanguage === "en" ? "es" : "en"));
+  };
+
   const renderContent = () => {
     switch (currentTab) {
       case '_home':
-        return <Home />;
+        return <Home language={language}/>;
       case '_bio':
-        return <Bio />;
+        return <Bio language={language}/>;
       case '_my_stack':
-        return <MyStack />;
+        return <MyStack language={language}/>;
       case '_projects':
-        return <Projects />;
+        return <Projects language={language}/>;
       case '_contact':
-        return <Contact />;
+        return <Contact language={language}/>;
       default:
         return null;
     }
@@ -62,7 +67,9 @@ const App = () => {
       onTabClick={handleTabClick}
       onAddTab={handleAddTab}
       onCloseTab={handleCloseTab}
-      sections={sections} 
+      sections={sections}
+      toggleLanguage={toggleLanguage}
+      language={language}
     >
       {renderContent()}
     </Layout>
