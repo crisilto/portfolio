@@ -1,10 +1,11 @@
+import cvPhoto from "../assets/cv.jpg";
 import '../styles/Home.css';
 
 const Home = () => {
   return (
     <div className="home-container">
       <div className="contact-photo">
-        <img src="src/assets/cv.jpg" alt="Cristina Silvestre" className="avatar" />
+        <img src={cvPhoto} alt="Cristina Silvestre" className="avatar" />
       </div>
       <h1 className="home-title">
         Hi there <span role="img" aria-label="wave">👋</span> I&apos;m
@@ -12,12 +13,12 @@ const Home = () => {
       <h2 className="home-name">[Cristina Silvestre]</h2>
       <h3 className="home-role">Web Developer</h3>
       <p className="home-description">
-        {/* I recently graduated in DAW */}
+        I recently graduated in DAW 
         <br />
-        {/* Consistenly learning, I'm looking for an opportunity to grow :) */}
+        Consistenly learning, I&#8216;m looking for an opportunity to grow :&#41;
       </p>
       <p className="home-links">
-        {/* My GitHub profile */}
+        My GitHub profile 
         <br />
         const githubUrl = &quot;<a href="https://github.com/crisilto" target="_blank" rel="noopener noreferrer">https://github.com/crisilto</a>&quot;
       </p>
