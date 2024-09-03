@@ -1,4 +1,3 @@
-// src/App.jsx
 import { useState } from 'react';
 import './App.css';
 import Bio from './components/Bio';
@@ -7,7 +6,6 @@ import Home from './components/Home';
 import Layout from './components/Layout';
 import MyStack from './components/MyStack';
 import Projects from './components/Projects';
-
 
 const App = () => {
   const [activeTabs, setActiveTabs] = useState([{ id: '_home', label: '_home' }]);
@@ -40,25 +38,19 @@ const App = () => {
   const renderContent = () => {
     switch (currentTab) {
       case '_home':
-        return <Home language={language}/>;
+        return <Home language={language} />;
       case '_bio':
-        return <Bio language={language}/>;
+        return <Bio language={language} />;
       case '_my_stack':
-        return <MyStack language={language}/>;
+        return <MyStack language={language} />;
       case '_projects':
-        return <Projects language={language}/>;
+        return <Projects language={language} />;
       case '_contact':
-        return <Contact language={language}/>;
+        return <Contact language={language} />;
       default:
         return null;
     }
   };
-
-  const sections = [
-    { id: '_home', label: '_home' },
-    { id: '_work', label: '_work', children: ['_bio', '_my_stack', '_projects'] },
-    { id: '_contact', label: '_contact' }
-  ];
 
   return (
     <Layout
@@ -67,7 +59,6 @@ const App = () => {
       onTabClick={handleTabClick}
       onAddTab={handleAddTab}
       onCloseTab={handleCloseTab}
-      sections={sections}
       toggleLanguage={toggleLanguage}
       language={language}
     >

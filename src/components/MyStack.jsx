@@ -1,8 +1,8 @@
-// src/components/MyStack.jsx
+import PropTypes from 'prop-types';
 import { FaCss3Alt, FaDatabase, FaGit, FaHtml5, FaJava, FaJs, FaPhp, FaReact } from 'react-icons/fa';
 import '../styles/MyStack.css';
 
-const MyStack = () => {
+const MyStack = ({language}) => {
   const techStack = [
     { name: 'HTML5', icon: <FaHtml5 className="stack-icon" /> },
     { name: 'CSS3', icon: <FaCss3Alt className="stack-icon" /> },
@@ -16,7 +16,7 @@ const MyStack = () => {
 
   return (
     <div className="stack-container">
-      <h2 className="stack-title">My Tech Stack</h2>
+      <h2 className="stack-title">{language === "en" ? "My Tech Stack" : "Mis tecnologías"}</h2>
       <div className="stack-list">
         {techStack.map((tech) => (
           <div key={tech.name} className="stack-item">
@@ -27,6 +27,10 @@ const MyStack = () => {
       </div>
     </div>
   );
+};
+
+MyStack.propTypes = {
+  language: PropTypes.string.isRequired,
 };
 
 export default MyStack;
