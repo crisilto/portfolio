@@ -60,6 +60,7 @@
 }
 
 .tabs-header {
+    margin-left: 20px;
     display: flex;
     flex: 1;
     gap: 5px;
