@@ -19,8 +19,8 @@ const Projects = ({ language }) => {
       description: language === 'en'
         ? 'A Facebook-inspired social media clone demonstrating full-stack capabilities.'
         : 'Un clon de Facebook que demuestra capacidades de desarrollo full-stack.',
-      githubUrl: 'https://github.com/crisilto/actualidad-y-gol',
-      demoUrl: 'https://actualidad-y-gol.vercel.app',
+      githubUrl: '',
+      demoUrl: '',
     },
     {
       id: 3,
