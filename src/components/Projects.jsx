@@ -5,14 +5,7 @@ import '../styles/Projects.css';
 const Projects = ({ language }) => {
   const projects = [
     {
-      name: language === 'en' ? 'Portfolio' : 'Portafolio',
-      description: language === 'en'
-        ? 'A personal website to showcase my skills and projects.'
-        : 'Un sitio web personal para mostrar mis habilidades y proyectos.',
-      githubUrl: 'https://github.com/crisilto/portfolio',
-      demoUrl: 'https://crisilto.github.io/portfolio',
-    },
-    {
+      id: 1,
       name: language === 'en' ? 'Dev365' : 'Dev365',
       description: language === 'en'
         ? '2nd DAW Final project - A complete website with casino games.'
@@ -21,6 +14,43 @@ const Projects = ({ language }) => {
       demoUrl: '',
     },
     {
+      id: 2,
+      name: language === 'en' ? 'FakeBook' : 'FakeBook',
+      description: language === 'en'
+        ? 'A Facebook-inspired social media clone demonstrating full-stack capabilities.'
+        : 'Un clon de Facebook que demuestra capacidades de desarrollo full-stack.',
+      githubUrl: 'https://github.com/crisilto/actualidad-y-gol',
+      demoUrl: 'https://actualidad-y-gol.vercel.app',
+    },
+    {
+      id: 3,
+      name: language === 'en' ? 'GymrApp' : 'GymrApp',
+      description: language === 'en'
+        ? 'A gym app for tracking workouts and progress, featuring user data visualization.'
+        : 'Aplicación de gimnasio para registrar entrenamientos y progreso, con visualización de datos del usuario.',
+      githubUrl: '',
+      demoUrl: '',
+    },
+    {
+      id: 4,
+      name: language === 'en' ? 'TaskManager API' : 'API Gestor de Tareas',
+      description: language === 'en'
+        ? 'A REST API for managing tasks and projects, built with Java and Spring Boot.'
+        : 'Una API REST para gestionar tareas y proyectos, desarrollada con Java y Spring Boot.',
+      githubUrl: '',
+      demoUrl: '',
+    },
+    {
+      id: 5,
+      name: language === 'en' ? 'SimpleBlog' : 'BlogSimple',
+      description: language === 'en'
+        ? 'A basic blog platform built with PHP, featuring CRUD operations for posts.'
+        : 'Una plataforma de blog básica creada con PHP, con operaciones CRUD para publicaciones.',
+      githubUrl: '',
+      demoUrl: '',
+    },
+    {
+      id: 6,
       name: language === 'en' ? 'Paintribution' : 'Paintribution',
       description: language === 'en'
         ? 'Github contributions panel clone. Click to relieve stress!'
@@ -29,12 +59,22 @@ const Projects = ({ language }) => {
       demoUrl: 'https://paintribution.vercel.app',
     },
     {
+      id: 7,
       name: language === 'en' ? 'Vidly' : 'Vidly',
       description: language === 'en'
-        ? 'A simple but functional video library.'
-        : 'Una biblioteca de videos simple pero funcional.',
+        ? 'A simple but functional movies library.'
+        : 'Una biblioteca de películas simple pero funcional.',
       githubUrl: 'https://github.com/crisilto/movies-with-react',
       demoUrl: 'https://movies-with-react-phi.vercel.app/movies',
+    },
+    {
+      id: 8,
+      name: language === 'en' ? 'Actuality & Goal' : 'Actualidad & Gol',
+      description: language === 'en'
+        ? 'Layout made with vanilla html and css of a digital sports newspaper.'
+        : 'Maquetación en HTML y CSS vanilla de un periódico digital deportivo.',
+      githubUrl: 'https://github.com/crisilto/actualidad-y-gol',
+      demoUrl: 'https://actualidad-y-gol.vercel.app',
     },
   ];
 
@@ -43,7 +83,7 @@ const Projects = ({ language }) => {
       <h2 className="projects-title">{language === 'en' ? 'My Projects' : 'Mis Proyectos'}</h2>
       <div className="projects-list">
         {projects.map((project) => (
-          <div key={project.name} className="project-card">
+          <div key={project.id} className="project-card">
             <h3 className="project-name">{project.name}</h3>
             <p className="project-description">{project.description}</p>
             <div className="project-links">
