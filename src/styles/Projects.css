@@ -75,3 +75,9 @@
 .project-icon {
   margin-right: 5px;
 }
+
+.project-link.disabled {
+  pointer-events: none; 
+  color: #6b7280; 
+  opacity: 0.6; 
+}

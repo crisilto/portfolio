@@ -87,14 +87,24 @@ const Projects = ({ language }) => {
             <h3 className="project-name">{project.name}</h3>
             <p className="project-description">{project.description}</p>
             <div className="project-links">
-              <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="project-link">
+              <a
+                href={project.githubUrl || '#'}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`project-link ${!project.githubUrl ? 'disabled' : ''}`}
+                onClick={e => !project.githubUrl && e.preventDefault()}
+              >
                 <FaGithub className="project-icon" /> {language === 'en' ? 'GitHub' : 'GitHub'}
               </a>
-              {project.demoUrl && (
-                <a href={project.demoUrl} target="_blank" rel="noopener noreferrer" className="project-link">
-                  <FaExternalLinkAlt className="project-icon" /> {language === 'en' ? 'Live Demo' : 'Demo en Vivo'}
-                </a>
-              )}
+              <a
+                href={project.demoUrl || '#'}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`project-link ${!project.demoUrl ? 'disabled' : ''}`}
+                onClick={e => !project.demoUrl && e.preventDefault()}
+              >
+                <FaExternalLinkAlt className="project-icon" /> {language === 'en' ? 'Live Demo' : 'Demo en Vivo'}
+              </a>
             </div>
           </div>
         ))}
