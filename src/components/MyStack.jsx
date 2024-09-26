@@ -1,27 +1,62 @@
 import PropTypes from 'prop-types';
-import { FaCss3Alt, FaDatabase, FaGit, FaHtml5, FaJava, FaJs, FaPhp, FaReact } from 'react-icons/fa';
+import { FaCss3Alt, FaDatabase, FaGitAlt, FaHtml5, FaJava, FaJs, FaLaravel, FaNodeJs, FaPhp, FaReact } from 'react-icons/fa';
+import { SiAstro, SiTypescript } from 'react-icons/si';
 import '../styles/MyStack.css';
 
-const MyStack = ({language}) => {
-  const techStack = [
+const MyStack = ({ language }) => {
+  const technologiesLearned = [
     { name: 'HTML5', icon: <FaHtml5 className="stack-icon" /> },
     { name: 'CSS3', icon: <FaCss3Alt className="stack-icon" /> },
-    { name: 'JavaScript', icon: <FaJs className="stack-icon" /> },
-    { name: 'React', icon: <FaReact className="stack-icon" /> },
     { name: 'Java', icon: <FaJava className="stack-icon" /> },
-    { name: 'PHP', icon: <FaPhp className="stack-icon" /> },
     { name: 'SQL', icon: <FaDatabase className="stack-icon" /> },
-    { name: 'Git', icon: <FaGit className="stack-icon" /> },
+    { name: 'JavaScript', icon: <FaJs className="stack-icon" /> },
+    { name: 'PHP', icon: <FaPhp className="stack-icon" /> },
+    { name: 'MySQL', icon: <FaDatabase className="stack-icon" /> },
+    { name: 'Git', icon: <FaGitAlt className="stack-icon" /> },
   ];
 
+  const technologiesLearning = [
+    { name: 'Spring Boot', icon: <FaJava /> },
+    { name: 'React', icon: <FaReact className="stack-icon" /> },
+    { name: 'Docker', icon: <FaDatabase /> }
+  ];
+
+  const technologiesInterested = [
+    { name: 'Astro', icon: <SiAstro /> },
+    { name: 'TypeScript', icon: <SiTypescript /> },
+    { name: 'NodeJS', icon: <FaNodeJs /> },
+    { name: 'Laravel', icon: <FaLaravel /> },
+  ]
+
   return (
-    <div className="stack-container">
-      <h2 className="stack-title">{language === "en" ? "My Tech Stack" : "Mis tecnologías"}</h2>
-      <div className="stack-list">
-        {techStack.map((tech) => (
-          <div key={tech.name} className="stack-item">
+    <div className="my-stack-container">
+
+      <h2 className="section-title">{language === 'en' ? 'I have learned...' : 'He aprendido...'}</h2>
+      <div className="tech-category">
+        {technologiesLearned.map((tech) => (
+          <div key={tech.name} className="tech-item learned">
             {tech.icon}
-            <span className="stack-name">{tech.name}</span>
+            {tech.name}
+          </div>
+        ))}
+      </div>
+
+      <h2 className="section-title">{language === 'en' ? 'I am currently learning...' : 'Estoy aprendiendo...'}</h2>
+      <div className="tech-category">
+        {technologiesLearning.map((tech) => (
+          <div key={tech.name} className="tech-item currently-learning">
+            {tech.icon}
+            {tech.name}
+          </div>
+        ))}
+      </div>
+
+      <h2 className="section-title">{language === 'en' ? 'I am interested in learning...' : 'Estoy interesada en aprender...'}</h2>
+      <div className="tech-category">
+        {technologiesInterested.map((tech) => (
+          <div key={tech.name} className="tech-item interested">
+            {tech.icon}
+            {tech.name}
           </div>
         ))}
       </div>

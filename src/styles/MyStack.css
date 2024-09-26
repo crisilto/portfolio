@@ -1,56 +1,77 @@
-.stack-container {
-    padding: 20px;
-    background-color: #0e101c; 
-    border-radius: 10px;
-    margin: 30px 60px;
-    color: #d1d5db; 
+.my-stack-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem 1rem;
+  color: #d1d5db;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #10b981; 
+  margin-bottom: 1rem;
+}
+
+.tech-category {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 0.5rem 0;
+  margin-bottom: 2rem;
+}
+
+.tech-category:last-child {
+  margin-bottom: 0;
+}
+
+.tech-item {
+  background-color: #2d2f3b;
+  color: #d1d5db;
+  border-radius: 8px;
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, background-color 0.2s;
+  cursor: pointer;
+}
+
+.tech-item:hover {
+  background-color: #4b5563;
+  transform: translateY(-4px); 
+}
+
+.tech-item svg {
+  width: 24px;
+  height: 24px;
+}
+
+.tech-item.learned {
+  border: 2px solid #555;
+}
+
+.tech-item.currently-learning {
+  border: 2px solid #10b981;
+}
+
+.tech-item.interested {
+  border: 2px solid #0ea5e9;
+}
+
+@media (max-width: 768px) {
+  .my-stack-container {
+    padding: 1rem;
   }
-  
-  .stack-title {
-    font-size: 2.5rem;
-    margin-bottom: 50px;
-    color: #10b981; 
-    text-align: center;
+
+  .tech-item {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
   }
-  
-  .stack-list {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); 
-    gap: 25px;
-    justify-items: center;
-    max-width: 700px;
-    margin: 0 auto; 
-  }
-  
-  .stack-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 150px;
-    height: 150px;
-    padding: 20px;
-    background-color: #1f2333; 
-    border-radius: 12px;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .stack-item:hover {
-    transform: scale(1.1);
-    background-color: #2d2f3b; 
-  }
-  
-  .stack-icon {
-    font-size: 3.5rem;
-    color: #0ea5e9;
-    margin-bottom: 10px;
-  }
-  
-  .stack-name {
-    font-size: 1.2rem;
-    color: #d1d5db;
-    text-align: center;
-  }
-  
+}
