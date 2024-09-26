@@ -48,7 +48,14 @@ const Layout = ({
 
       <div className="bottom-bar">
         <div className="bottom-left">
-          <span><a href='#' onClick={() => onTabClick('_contact')}>crisilto1997@gmail.com</a></span>
+          <span>
+            <a href='#' onClick={() => {
+              onAddTab({ id: '_contact', label: language === 'en' ? '_contact' : '_contacto' });
+              onTabClick('_contact');
+            }}>
+              crisilto1997@gmail.com
+            </a>
+          </span>
         </div>
         <div className="bottom-right">
           <a href="https://github.com/crisilto" target="_blank" rel="noopener noreferrer">
