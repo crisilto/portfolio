@@ -13,20 +13,6 @@ const App = () => {
   const [language, setLanguage] = useState('en');
 
   //TODO: Change this switch to cleaner way to do this functionality.
-  useEffect(() => {
-    const updatedTabs = activeTabs.map((tab) => {
-      const newLabel = getTabLabel(tab.id, language); //Function to obtain the new label.
-
-      //Only update the page if the label has changed.
-      if (tab.label !== newLabel) {
-        return { ...tab, label: newLabel };
-      }
-      return tab;
-    });
-
-    setActiveTabs(updatedTabs);
-  }, [language, activeTabs]);
-
   const getTabLabel = (tabId, lang) => {
     switch (tabId) {
       case '_home':
@@ -43,6 +29,14 @@ const App = () => {
         return tabId;
     }
   };
+
+  useEffect(() => {
+    const updatedTabs = activeTabs.map((tab) => ({
+      ...tab,
+      label: getTabLabel(tab.id, language),
+    }));
+    setActiveTabs(updatedTabs);
+  }, [language]);
 
   const handleTabClick = (tabId) => {
     setCurrentTab(tabId);
