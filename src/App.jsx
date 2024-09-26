@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import Bio from './components/Bio';
 import Contact from './components/Contact';
@@ -11,6 +11,38 @@ const App = () => {
   const [activeTabs, setActiveTabs] = useState([{ id: '_home', label: '_home' }]);
   const [currentTab, setCurrentTab] = useState('_home');
   const [language, setLanguage] = useState('en');
+
+  //TODO: Change this switch to cleaner way to do this functionality.
+  useEffect(() => {
+    const updatedTabs = activeTabs.map((tab) => {
+      const newLabel = getTabLabel(tab.id, language); //Function to obtain the new label.
+
+      //Only update the page if the label has changed.
+      if (tab.label !== newLabel) {
+        return { ...tab, label: newLabel };
+      }
+      return tab;
+    });
+
+    setActiveTabs(updatedTabs);
+  }, [language, activeTabs]);
+
+  const getTabLabel = (tabId, lang) => {
+    switch (tabId) {
+      case '_home':
+        return lang === 'en' ? '_home' : '_inicio';
+      case '_bio':
+        return lang === 'en' ? '_bio' : '_biografía';
+      case '_my_stack':
+        return lang === 'en' ? '_my_stack' : '_mi_stack';
+      case '_projects':
+        return lang === 'en' ? '_projects' : '_proyectos';
+      case '_contact':
+        return lang === 'en' ? '_contact' : '_contacto';
+      default:
+        return tabId;
+    }
+  };
 
   const handleTabClick = (tabId) => {
     setCurrentTab(tabId);
