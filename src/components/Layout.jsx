@@ -23,7 +23,15 @@ const Layout = ({
         currentTab={currentTab}
       />
       <div className="top-bar">
-        <span className="username">Crisilto</span>
+        <span className="username">
+          <a href='#' onClick={() => {
+            onAddTab({ id: '_home', label: language === 'en' ? '_home' : '_inicio' });
+            onTabClick('_home');
+          }}>
+            Crisilto
+          </a>
+        </span>
+
         <div className="tabs-header">
           {activeTabs.map((tab) => (
             <div key={tab.id} className={`tab ${tab.id === currentTab ? 'active' : ''}`}>
