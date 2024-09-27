@@ -51,13 +51,15 @@
 
     .mobile-sidebar li {
         padding: 10px 16px;
-        margin: 5px 0;
+        margin: 9px 0;
         border-radius: 4px;
         cursor: pointer;
         transition: background-color 0.3s ease;
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         color: #d1d5db;
+        justify-content: flex-start;
+        flex-direction: row;
     }
 
     .mobile-sidebar li:hover,
@@ -73,9 +75,13 @@
 
     .mobile-expandable {
         display: flex;
-        align-items: center;
-        justify-content: space-between;
+        justify-content: flex-start;
         cursor: pointer;
+        align-content: space-between;
+        align-items: baseline;
+        flex-direction: column;
+        flex-wrap: wrap;
+        margin-top: 20px;
     }
 
     .mobile-expandable::after {
@@ -98,6 +104,7 @@
 
     .mobile-submenu.expanded {
         display: block;
+        margin-top: 25px;
     }
 
     .mobile-submenu li {
