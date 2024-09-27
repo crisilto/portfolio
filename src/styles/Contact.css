@@ -1,8 +1,8 @@
 .contact-container {
+  margin-top: 31px !important;
   padding: 20px;
   background-color: #0e101c;
   border-radius: 10px;
-  margin: 30px 60px;
   color: #d1d5db;
   max-width: 800px;
   margin: 0 auto;
@@ -94,6 +94,11 @@ form {
 
   form {
     padding: 1.5rem 2rem; 
+    max-width: 350px;
+  }
+
+  .contact-form {
+    min-width: 250px;
     max-width: 350px;
   }
 
