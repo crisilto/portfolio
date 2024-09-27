@@ -134,7 +134,7 @@
 .sidebar li:hover,
 .sidebar li.active {
     background-color: #2d3748;
-   color : #81e6d9;
+    color: #81e6d9;
 }
 
 .sidebar .child {
@@ -220,4 +220,47 @@
 
 .bottom-bar .bottom-right a:hover {
     color: #81e6d9;
+}
+
+@media (max-width: 768px) {
+
+    .username{
+        flex: 0;
+    }
+
+    .main-layout {
+        margin-left: 0;
+        flex-direction: column;
+    }
+
+    .layout-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        margin-left: 0;
+        margin-top: 0;
+        width: 100%;
+        min-width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .main-content {
+        flex: 1;
+        overflow-y: auto;
+        padding: 20px;
+        padding: 10px;
+        width: 100%; 
+    }
+
+    .top-bar {
+        padding: 10px;
+        justify-content: space-between;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 100;
+    }
 }

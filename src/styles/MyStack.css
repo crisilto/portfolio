@@ -1,11 +1,10 @@
 .my-stack-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   width: 100%;
   height: 80%;
-  margin-top: 43px;
+  margin-top: 51px;
   text-align: center;
 }
 
@@ -24,7 +23,6 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
-  justify-content: center;
 }
 
 .tech-item {
@@ -47,14 +45,42 @@
   transform: translateY(-4px);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .tech-category {
     grid-template-columns: repeat(2, 1fr); 
   }
 }
 
+@media (max-width: 768px) {
+  .main-content {
+  flex: 1;
+  overflow-y: auto;
+}
+
+  .tech-category {
+    grid-template-columns: repeat(2, 1fr); 
+  }
+
+  .section-title {
+    font-size: 1.3rem; 
+  }
+
+  .tech-item {
+    width: 140px; 
+    height: 50px;
+    font-size: 1.1rem;
+    padding: 0.6rem 1rem;
+    justify-content: center;
+    justify-self: center;
+  }
+
+  .interested-column{
+    padding-bottom: 20px;
+  }
+}
+
 @media (max-width: 480px) {
   .tech-category {
-    grid-template-columns: 1fr; 
+    justify-content: center;
   }
 }

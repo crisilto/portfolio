@@ -1,62 +1,92 @@
 .home-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    height: 100%;
-    color: #d1d5db; 
-    padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  color: #d1d5db;
+  padding: 20px;
+  text-align: center;
+}
+
+.contact-photo {
+  margin: 20px;
+}
+
+.avatar {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #2d2f3b;
+}
+
+.home-title {
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+.home-name {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.home-role {
+  font-size: 1.5rem;
+  color: #10b981;
+  margin: 5px 0 20px;
+}
+
+.home-description {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: #9ca3af;
+}
+
+.home-links {
+  margin-top: 20px;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: #10b981;
+}
+
+.home-links a {
+  color: #0ea5e9;
+  text-decoration: none;
+}
+
+.home-links a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .home-container {
+    padding: 10px;
     text-align: center;
+    justify-content: center;
   }
 
-  .contact-photo {
-    margin: 20px; 
-  }
-  
   .avatar {
-    width: 220px;
-    height: 220px;
-    border-radius: 50%;
-    object-fit: cover; 
-    border: 4px solid #2d2f3b; 
+    width: 150px;
+    height: 150px;
   }
 
-  .home-title {
-    font-size: 2rem;
-    margin: 10px 0;
-  }
-  
-  .home-name {
-    font-size: 3rem;
-    font-weight: bold;
-    margin: 5px 0;
-  }
-  
+  .home-title,
+  .home-name,
   .home-role {
     font-size: 1.5rem;
-    color: #10b981; 
-    margin: 5px 0 20px;
   }
-  
-  .home-description {
-    font-size: 1.2rem;
-    line-height: 1.5;
-    color: #9ca3af; 
-  }
-  
+
   .home-links {
-    margin-top: 20px;
-    font-size: 1.1rem;
-    line-height: 1.5;
-    color: #10b981;
+    font-size: 1rem;
   }
-  
-  .home-links a {
-    color: #0ea5e9;
-    text-decoration: none;
+  .avatar {
+    width: 100px;
+    height: 100px;
   }
-  
-  .home-links a:hover {
-    text-decoration: underline;
+
+  .home-container {
+    padding: 10px; 
   }
-  
+}

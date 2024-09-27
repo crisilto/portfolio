@@ -56,16 +56,24 @@
   background-color: #059669;
 }
 
+
+
 @media (max-width: 768px) {
   .bio-container {
     padding: 1rem;
+    text-align: left;
   }
 
   .bio-title {
-    font-size: 2rem;
+    font-size: 2rem; 
   }
 
-  .bio-section h3 {
-    font-size: 1.5rem;
+  .bio-section {
+    padding: 1rem;
+  }
+
+  .download-cv-btn {
+    font-size: 1rem;
+    padding: 0.5rem 1rem; 
   }
 }

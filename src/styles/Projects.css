@@ -81,3 +81,33 @@
   color: #6b7280; 
   opacity: 0.6; 
 }
+
+@media (max-width: 1024px) {
+  .projects-list {
+    justify-content: space-around;
+  }
+
+  .project-card {
+    width: 250px; 
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-container {
+    margin: 20px 10px; 
+    padding: 10px;
+  }
+
+  .projects-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .project-card {
+    width: 100%;
+  }
+
+  .project-description {
+    font-size: 0.9rem;
+  }
+}

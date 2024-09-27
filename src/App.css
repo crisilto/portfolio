@@ -13,3 +13,16 @@
   overflow-y: auto; 
   padding: 20px;
 }
+
+@media (max-width: 768px) {
+  .app {
+    display: block;
+    height: auto; 
+  }
+
+  .sidebar {
+    width: 100%; 
+    min-width: 100%;
+    height: auto;
+  }
+}
