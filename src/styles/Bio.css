@@ -60,12 +60,12 @@
 
 @media (max-width: 768px) {
   .bio-container {
-    padding: 1rem;
     text-align: left;
   }
 
   .bio-title {
     font-size: 2rem; 
+    margin: 20px;
   }
 
   .bio-section {
