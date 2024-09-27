@@ -28,7 +28,7 @@
     .mobile-sidebar {
         display: none;
         position: fixed;
-        top: 0;
+        top: 51px;
         left: 0;
         height: 100vh;
         background-color: #1f2333;
