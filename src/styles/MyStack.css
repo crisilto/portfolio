@@ -52,6 +52,9 @@
 }
 
 @media (max-width: 768px) {
+  .projects-title {
+    padding-top: 20px;
+  }
   .main-content {
   flex: 1;
   overflow-y: auto;
