@@ -2,6 +2,8 @@ import PropTypes from "prop-types";
 import "../styles/Bio.css";
 
 const Bio = ({ language }) => {
+  const cvUrl = language === "en" ? "/CVen.pdf" : "/CVes.pdf";
+
   return (
     <div className="bio-container">
       <h2 className="bio-title">
@@ -27,19 +29,17 @@ const Bio = ({ language }) => {
           </p>
         </section>
         <a
-          href={
-            language === "en" ? "src/assets/CVen.pdf" : "src/assets/CVes.pdf"
-          }
+          href={cvUrl}
           download
           className="download-cv-btn"
         >
           {language === "en" ? "Download My CV" : "Descargar mi CV"}
         </a>
       </div>
-      
     </div>
   );
 };
+
 Bio.propTypes = {
   language: PropTypes.string.isRequired,
 };

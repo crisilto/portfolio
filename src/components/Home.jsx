@@ -1,12 +1,11 @@
 import PropTypes from 'prop-types';
-import cvPhoto from "../assets/cv.jpg";
 import '../styles/Home.css';
 
 const Home = ({language}) => {
   return (
     <div className="home-container">
       <div className="contact-photo">
-        <img src={cvPhoto} alt="Cristina Silvestre" className="avatar" />
+        <img src="/cv.jpg" alt="Cristina Silvestre" className="avatar" />
       </div>
       <h1 className="home-title">
       {language === 'en' ? 'Hi there' : 'Hola'} <span role="img" aria-label="wave">👋</span> {language === 'en' ? "I'm" : 'Soy'}
