@@ -1,6 +1,13 @@
 import PropTypes from 'prop-types';
-import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
+import { useState } from 'react';
+import { BiLogoSpringBoot } from "react-icons/bi";
+import { FaBootstrap, FaCss3Alt, FaExternalLinkAlt, FaGithub, FaHtml5, FaJava, FaJsSquare, FaPhp, FaReact } from 'react-icons/fa';
+import { GrMysql } from "react-icons/gr";
+import { RiH2 } from "react-icons/ri";
+import { SiSass } from "react-icons/si";
+
 import '../styles/Projects.css';
+import FilterBar from './FilterBar';
 
 const Projects = ({ language }) => {
   const projects = [
@@ -12,6 +19,7 @@ const Projects = ({ language }) => {
         : 'Proyecto final del 2º DAW - Un sitio web completo con juegos de casino.',
       githubUrl: 'https://github.com/crisilto/dev365',
       demoUrl: '',
+      technologies: ['HTML', 'CSS', 'JavaScript', 'PHP', 'MySQL']
     },
     {
       id: 2,
@@ -21,15 +29,17 @@ const Projects = ({ language }) => {
         : 'Un clon de Facebook que demuestra capacidades de desarrollo full-stack.',
       githubUrl: '',
       demoUrl: '',
+      technologies: ['React', 'SpringBoot', 'H2', 'SASS']
     },
     {
       id: 3,
       name: language === 'en' ? 'GymrApp' : 'GymrApp',
       description: language === 'en'
-        ? 'A gym app for tracking workouts and progress, featuring user data visualization.'
-        : 'Aplicación de gimnasio para registrar entrenamientos y progreso, con visualización de datos del usuario.',
+        ? 'Track your workouts and progress. Includes user data visualization.'
+        : 'Registra tus entrenamientos y progres. Incluye visualización de datos del usuario.',
       githubUrl: '',
       demoUrl: '',
+      technologies: ['React', 'SpringBoot', 'H2', 'SASS']
     },
     {
       id: 4,
@@ -39,15 +49,17 @@ const Projects = ({ language }) => {
         : 'Una API REST para gestionar tareas y proyectos, desarrollada con Java y Spring Boot.',
       githubUrl: '',
       demoUrl: '',
+      technologies: ['Java', 'SpringBoot']
     },
     {
       id: 5,
       name: language === 'en' ? 'SimpleBlog' : 'BlogSimple',
       description: language === 'en'
-        ? 'A basic blog platform built with PHP, featuring CRUD operations for posts.'
-        : 'Una plataforma de blog básica creada con PHP, con operaciones CRUD para publicaciones.',
+        ? 'A basic blog platform featuring CRUD operations for posts.'
+        : 'Una plataforma de blog básica con operaciones CRUD para publicaciones.',
       githubUrl: '',
       demoUrl: '',
+      technologies: ['PHP']
     },
     {
       id: 6,
@@ -57,6 +69,7 @@ const Projects = ({ language }) => {
         : 'Clon del panel de contribuciones de GitHub. ¡Haz clic para aliviar el estrés!',
       githubUrl: 'https://github.com/crisilto/paintribution',
       demoUrl: 'https://paintribution.vercel.app',
+      technologies: ['JavaScript', 'React', 'CSS']
     },
     {
       id: 7,
@@ -66,6 +79,7 @@ const Projects = ({ language }) => {
         : 'Una biblioteca de películas simple pero funcional.',
       githubUrl: 'https://github.com/crisilto/movies-with-react',
       demoUrl: 'https://movies-with-react-phi.vercel.app/movies',
+      technologies: ['JavaScript', 'React', 'Bootstrap']
     },
     {
       id: 8,
@@ -75,14 +89,66 @@ const Projects = ({ language }) => {
         : 'Maquetación en HTML y CSS vanilla de un periódico digital deportivo.',
       githubUrl: 'https://github.com/crisilto/actualidad-y-gol',
       demoUrl: 'https://actualidad-y-gol.vercel.app',
+      technologies: ['HTML', 'CSS']
     },
   ];
+
+  const allTechnologies = [
+    'HTML',
+    'CSS',
+    'JavaScript',
+    'PHP',
+    'MySQL',
+    'React',
+    'SpringBoot',
+    'H2',
+    'SASS',
+    'Java',
+    'Bootstrap',
+  ];
+
+  const [filteredProjects, setFilteredProjects] = useState(projects);
+
+  const handleFilterChange = (selectedTechnologies) => {
+    let filtered = projects;
+
+    if (selectedTechnologies.length > 0) {
+      filtered = filtered.filter((project) =>
+        selectedTechnologies.every((tech) =>
+          project.technologies.includes(tech)
+        )
+      );
+    }
+
+    setFilteredProjects(filtered);
+  };
+
+  const techIconsMapping = {
+    HTML: FaHtml5,
+    CSS: FaCss3Alt,
+    JavaScript: FaJsSquare,
+    PHP: FaPhp,
+    MySQL: GrMysql,
+    React: FaReact,
+    SpringBoot: BiLogoSpringBoot,
+    H2: RiH2,
+    SASS: SiSass ,
+    Java: FaJava,
+    Bootstrap: FaBootstrap,
+  }
+
+  const handleIconClick = (tech) => {
+    handleFilterChange([tech]);
+  };
 
   return (
     <div className="projects-container">
       <h2 className="projects-title">{language === 'en' ? 'My Projects' : 'Mis Proyectos'}</h2>
+
+      <FilterBar technologies={allTechnologies} onFilterChange={handleFilterChange} />
+
       <div className="projects-list">
-        {projects.map((project) => (
+        {filteredProjects.map((project) => (
           <div key={project.id} className="project-card">
             <h3 className="project-name">{project.name}</h3>
             <p className="project-description">{project.description}</p>
@@ -92,7 +158,7 @@ const Projects = ({ language }) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`project-link ${!project.githubUrl ? 'disabled' : ''}`}
-                onClick={e => !project.githubUrl && e.preventDefault()}
+                onClick={(e) => !project.githubUrl && e.preventDefault()}
               >
                 <FaGithub className="project-icon" /> {language === 'en' ? 'GitHub' : 'GitHub'}
               </a>
@@ -101,10 +167,21 @@ const Projects = ({ language }) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`project-link ${!project.demoUrl ? 'disabled' : ''}`}
-                onClick={e => !project.demoUrl && e.preventDefault()}
+                onClick={(e) => !project.demoUrl && e.preventDefault()}
               >
                 <FaExternalLinkAlt className="project-icon" /> {language === 'en' ? 'Live Demo' : 'Demo en Vivo'}
               </a>
+            </div>
+
+            <div className="technologies-used">
+              {project.technologies.map((tech) => {
+                const TechIcon = techIconsMapping[tech];
+                return (
+                  <span key={tech} className="tech-tag" onClick={() => handleIconClick(tech)}>
+                    <TechIcon className="tech-icon" />
+                  </span>
+                );
+              })}
             </div>
           </div>
         ))}
