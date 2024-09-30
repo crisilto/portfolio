@@ -107,16 +107,16 @@ const Projects = ({ language }) => {
     'Bootstrap',
   ];
 
+  const [selectedTechnologies, setSelectedTechnologies] = useState([]);
   const [filteredProjects, setFilteredProjects] = useState(projects);
 
-  const handleFilterChange = (selectedTechnologies) => {
+  const handleFilterChange = (selected) => {
+    setSelectedTechnologies(selected);
     let filtered = projects;
 
-    if (selectedTechnologies.length > 0) {
+    if (selected.length > 0) {
       filtered = filtered.filter((project) =>
-        selectedTechnologies.every((tech) =>
-          project.technologies.includes(tech)
-        )
+        selected.every((tech) => project.technologies.includes(tech))
       );
     }
 
@@ -132,20 +132,23 @@ const Projects = ({ language }) => {
     React: FaReact,
     SpringBoot: BiLogoSpringBoot,
     H2: RiH2,
-    SASS: SiSass ,
+    SASS: SiSass,
     Java: FaJava,
     Bootstrap: FaBootstrap,
   }
 
   const handleIconClick = (tech) => {
-    handleFilterChange([tech]);
+    if (selectedTechnologies.includes(tech)) {
+      handleFilterChange(selectedTechnologies.filter((t) => t !== tech));
+    } else {
+      handleFilterChange([...selectedTechnologies.filter((t) => t !== "All"), tech]);
+    }
   };
-
   return (
     <div className="projects-container">
       <h2 className="projects-title">{language === 'en' ? 'My Projects' : 'Mis Proyectos'}</h2>
 
-      <FilterBar technologies={allTechnologies} onFilterChange={handleFilterChange} />
+      <FilterBar technologies={allTechnologies} selectedTechnologies={selectedTechnologies} onFilterChange={handleFilterChange} />
 
       <div className="projects-list">
         {filteredProjects.map((project) => (

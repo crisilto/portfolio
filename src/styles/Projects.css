@@ -18,20 +18,22 @@
 
 .projects-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 20px;
+  justify-content: start; 
 }
 
 .project-card {
+  width: 280px;
+  height: 280px;
   background-color: #1f2333;
   border-radius: 8px;
   padding: 25px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  height: 250px;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 .project-card:hover {
@@ -51,7 +53,7 @@
 }
 
 .project-links {
-  margin-bottom: 15px;
+  margin-top: auto;
   display: flex;
   gap: 15px;
 }
@@ -88,12 +90,13 @@
   background-color: #2d2f3b;
   padding: 8px;
   border-radius: 6px;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
   cursor: pointer;
 }
 
 .tech-tag:hover {
   background-color: #374151;
+  transform: scale(1.1);
 }
 
 .tech-icon {
@@ -103,19 +106,29 @@
 
 @media (max-width: 768px) {
   .projects-title {
-    font-size: 2rem; 
+    font-size: 2rem;
     margin: 20px;
   }
 
   .projects-list {
-      grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .checkbox-list {
     gap: 5px;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .project-card {
-      padding: 15px;
+    padding: 30px;
   }
+
+  .project-links {
+    margin-bottom: 15px; 
+  }
+  
 }
