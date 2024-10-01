@@ -4,7 +4,6 @@ import Bio from './components/Bio';
 import Contact from './components/Contact';
 import Home from './components/Home';
 import Layout from './components/Layout';
-import MyStack from './components/MyStack';
 import Projects from './components/Projects';
 import { useLanguage } from './context/LanguageContext';
 
@@ -19,8 +18,6 @@ const App = () => {
         return language === 'en' ? '_home' : '_inicio';
       case '_bio':
         return language === 'en' ? '_bio' : '_biografía';
-      case '_my_stack':
-        return language === 'en' ? '_my_stack' : '_mi_stack';
       case '_projects':
         return language === 'en' ? '_projects' : '_proyectos';
       case '_contact':
@@ -63,8 +60,6 @@ const App = () => {
         return <Home language={language} />;
       case '_bio':
         return <Bio language={language} />;
-      case '_my_stack':
-        return <MyStack language={language} />;
       case '_projects':
         return <Projects language={language} />;
       case '_contact':

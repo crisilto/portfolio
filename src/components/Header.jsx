@@ -25,7 +25,7 @@ const Header = ({ onTabClick, onAddTab, currentTab }) => {
           {language === 'en' ? '_home' : '_inicio'}
         </li>
         <li
-          className={`expandable ${isWorkExpanded ? 'expanded' : ''} ${['_bio', '_my_stack', '_projects'].includes(currentTab) ? 'active' : ''}`}
+          className={`expandable ${isWorkExpanded ? 'expanded' : ''} ${['_bio', '_projects'].includes(currentTab) ? 'active' : ''}`}
           onClick={handleWorkToggle}
         >
           {language === 'en' ? '_work' : '_trabajo'}
@@ -40,15 +40,6 @@ const Header = ({ onTabClick, onAddTab, currentTab }) => {
               }}
             >
               {language === 'en' ? '_bio' : '_biografía'}
-            </li>
-            <li
-              className={`child ${currentTab === '_my_stack' ? 'active' : ''}`}
-              onClick={() => {
-                onAddTab({ id: '_my_stack', label: language === 'en' ? '_my_stack' : '_mi_stack' });
-                onTabClick('_my_stack');
-              }}
-            >
-              {language === 'en' ? '_my_stack' : '_mi_stack'}
             </li>
             <li
               className={`child ${currentTab === '_projects' ? 'active' : ''}`}

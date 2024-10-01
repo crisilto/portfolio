@@ -39,9 +39,6 @@ const MobileSidebar = ({ onTabClick }) => {
                 <li onClick={() => { onTabClick("_bio"); setMenuOpen(false); }}>
                   {language === "en" ? "_bio" : "_biografía"}
                 </li>
-                <li onClick={() => { onTabClick("_my_stack"); setMenuOpen(false); }}>
-                  {language === "en" ? "_my_stack" : "_mi_stack"}
-                </li>
                 <li onClick={() => { onTabClick("_projects"); setMenuOpen(false); }}>
                   {language === "en" ? "_projects" : "_proyectos"}
                 </li>
