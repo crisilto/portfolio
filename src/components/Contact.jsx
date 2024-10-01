@@ -1,7 +1,9 @@
 import PropTypes from 'prop-types';
 import '../styles/Contact.css';
+import { useLanguage } from './../context/LanguageContext';
 
-const Contact = ({ language }) => {
+const Contact = () => {
+  const {language} = useLanguage();
   const handleSubmit = (event) => {
     event.preventDefault();
     alert(language === 'en' ? 'Form submitted!' : '¡Formulario enviado!');

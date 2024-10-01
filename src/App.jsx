@@ -6,25 +6,25 @@ import Home from './components/Home';
 import Layout from './components/Layout';
 import MyStack from './components/MyStack';
 import Projects from './components/Projects';
+import { useLanguage } from './context/LanguageContext';
 
 const App = () => {
+  const { language, toggleLanguage } = useLanguage();
   const [activeTabs, setActiveTabs] = useState([{ id: '_home', label: '_home' }]);
   const [currentTab, setCurrentTab] = useState('_home');
-  const [language, setLanguage] = useState('en');
 
-  //TODO: Change this switch to cleaner way to do this functionality.
-  const getTabLabel = (tabId, lang) => {
+  const getTabLabel = (tabId) => {
     switch (tabId) {
       case '_home':
-        return lang === 'en' ? '_home' : '_inicio';
+        return language === 'en' ? '_home' : '_inicio';
       case '_bio':
-        return lang === 'en' ? '_bio' : '_biografía';
+        return language === 'en' ? '_bio' : '_biografía';
       case '_my_stack':
-        return lang === 'en' ? '_my_stack' : '_mi_stack';
+        return language === 'en' ? '_my_stack' : '_mi_stack';
       case '_projects':
-        return lang === 'en' ? '_projects' : '_proyectos';
+        return language === 'en' ? '_projects' : '_proyectos';
       case '_contact':
-        return lang === 'en' ? '_contact' : '_contacto';
+        return language === 'en' ? '_contact' : '_contacto';
       default:
         return tabId;
     }
@@ -33,7 +33,7 @@ const App = () => {
   useEffect(() => {
     const updatedTabs = activeTabs.map((tab) => ({
       ...tab,
-      label: getTabLabel(tab.id, language),
+      label: getTabLabel(tab.id),
     }));
     setActiveTabs(updatedTabs);
   }, [language]);
@@ -55,10 +55,6 @@ const App = () => {
     if (currentTab === tabId) {
       setCurrentTab(updatedTabs.length ? updatedTabs[0].id : '_home');
     }
-  };
-
-  const toggleLanguage = () => {
-    setLanguage((prevLanguage) => (prevLanguage === "en" ? "es" : "en"));
   };
 
   const renderContent = () => {

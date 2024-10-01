@@ -1,15 +1,32 @@
 import PropTypes from 'prop-types';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { BiLogoSpringBoot } from "react-icons/bi";
 import { FaBootstrap, FaCss3Alt, FaExternalLinkAlt, FaGithub, FaHtml5, FaJava, FaJsSquare, FaPhp, FaReact } from 'react-icons/fa';
 import { GrMysql } from "react-icons/gr";
 import { RiH2 } from "react-icons/ri";
 import { SiSass } from "react-icons/si";
+import { useLanguage } from './../context/LanguageContext';
 
 import '../styles/Projects.css';
 import FilterBar from './FilterBar';
 
-const Projects = ({ language }) => {
+const Projects = () => {
+  const { language } = useLanguage();
+
+  const allTechnologies = [
+    'HTML',
+    'CSS',
+    'JavaScript',
+    'PHP',
+    'MySQL',
+    'React',
+    'SpringBoot',
+    'H2',
+    'SASS',
+    'Java',
+    'Bootstrap',
+  ];
+
   const projects = [
     {
       id: 1,
@@ -93,29 +110,24 @@ const Projects = ({ language }) => {
     },
   ];
 
-  const allTechnologies = [
-    'HTML',
-    'CSS',
-    'JavaScript',
-    'PHP',
-    'MySQL',
-    'React',
-    'SpringBoot',
-    'H2',
-    'SASS',
-    'Java',
-    'Bootstrap',
-  ];
-
   const [selectedTechnologies, setSelectedTechnologies] = useState([]);
   const [filteredProjects, setFilteredProjects] = useState(projects);
+
+  useEffect(() => {
+    const updatedProjects = projects.map((project) => ({
+      ...project,
+      name: language === 'en' ? project.name : project.name,
+      description: language === 'en' ? project.description : project.description,
+    }));
+    setFilteredProjects(updatedProjects);
+  }, [language]);
 
   const handleFilterChange = (selected) => {
     setSelectedTechnologies(selected);
     let filtered = projects;
 
     if (selected.length > 0) {
-      filtered = filtered.filter((project) =>
+      filtered = projects.filter((project) =>
         selected.every((tech) => project.technologies.includes(tech))
       );
     }
@@ -135,7 +147,7 @@ const Projects = ({ language }) => {
     SASS: SiSass,
     Java: FaJava,
     Bootstrap: FaBootstrap,
-  }
+  };
 
   const handleIconClick = (tech) => {
     if (selectedTechnologies.includes(tech)) {
@@ -144,11 +156,16 @@ const Projects = ({ language }) => {
       handleFilterChange([...selectedTechnologies.filter((t) => t !== "All"), tech]);
     }
   };
+
   return (
     <div className="projects-container">
       <h2 className="projects-title">{language === 'en' ? 'My Projects' : 'Mis Proyectos'}</h2>
 
-      <FilterBar technologies={allTechnologies} selectedTechnologies={selectedTechnologies} onFilterChange={handleFilterChange} />
+      <FilterBar
+        technologies={allTechnologies}
+        selectedTechnologies={selectedTechnologies}
+        onFilterChange={handleFilterChange}
+      />
 
       <div className="projects-list">
         {filteredProjects.map((project) => (
@@ -194,7 +211,7 @@ const Projects = ({ language }) => {
 };
 
 Projects.propTypes = {
-  language: PropTypes.string.isRequired,
+  language: PropTypes.string,
 };
 
 export default Projects;

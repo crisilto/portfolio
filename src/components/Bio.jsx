@@ -1,7 +1,9 @@
 import PropTypes from "prop-types";
 import "../styles/Bio.css";
+import { useLanguage } from './../context/LanguageContext';
 
-const Bio = ({ language }) => {
+const Bio = () => {
+  const {language} = useLanguage();
   const cvUrl = language === "en" ? "/CVen.pdf" : "/CVes.pdf";
 
   return (

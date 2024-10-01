@@ -13,8 +13,11 @@ import {
 } from "react-icons/fa";
 import { SiAstro, SiTypescript } from "react-icons/si";
 import "../styles/MyStack.css";
+import { useLanguage } from './../context/LanguageContext';
 
-const MyStack = ({ language }) => {
+const MyStack = () => {
+  const { language } = useLanguage();
+
   const technologiesLearned = [
     { name: "HTML5", icon: <FaHtml5 className="stack-icon" /> },
     { name: "CSS3", icon: <FaCss3Alt className="stack-icon" /> },

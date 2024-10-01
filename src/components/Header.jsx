@@ -1,8 +1,11 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 import '../styles/Header.css';
+import { useLanguage } from './../context/LanguageContext';
 
-const Header = ({ onTabClick, language, onAddTab, currentTab }) => {
+const Header = ({ onTabClick, onAddTab, currentTab }) => {
+  const {language} = useLanguage();
+
   const [isWorkExpanded, setIsWorkExpanded] = useState(false);
 
   const handleWorkToggle = () => {

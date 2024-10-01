@@ -1,7 +1,10 @@
 import PropTypes from 'prop-types';
 import '../styles/Home.css';
+import { useLanguage } from './../context/LanguageContext';
 
-const Home = ({language}) => {
+const Home = () => {
+  const {language} = useLanguage();
+
   return (
     <div className="home-container">
       <div className="contact-photo">

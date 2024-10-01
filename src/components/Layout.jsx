@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import { FaGithub, FaGlobe, FaLinkedin } from "react-icons/fa";
 import "../styles/Layout.css";
+import { useLanguage } from './../context/LanguageContext';
 import Header from "./Header";
 import MobileSidebar from "./MobileSidebar";
 
@@ -12,8 +13,9 @@ const Layout = ({
   onAddTab,
   onCloseTab,
   toggleLanguage,
-  language,
 }) => {
+  const {language} = useLanguage();
+
   return (
     <div className="layout-container">
       <Header
