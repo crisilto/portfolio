@@ -1,78 +1,164 @@
 .bio-container {
-  padding: 2rem;
+  padding: 4rem 2rem;
   color: #d1d5db;
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
 .bio-title {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   font-weight: bold;
-  color: #10b981;
+  color: #4fd1c5;
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 .bio-content {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  padding-top: 2rem;
+  gap: 3rem;
 }
 
 .bio-section {
-  display: flex;
-  background-color: #2d2f3b;
-  padding: 2rem;
-  gap: 5px;
-  border-radius: 12px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  flex-direction: column;
+  background-color: #1f1f2e;
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.bio-section:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.3);
 }
 
 .bio-section h3 {
-  font-size: 1.8rem;
-  color: #10b981;
-  margin-bottom: 1rem;
+  font-size: 2rem;
+  color: #4fd1c5;
+  margin-bottom: 1.5rem;
+  position: relative;
 }
 
-.bio-section p {
-  font-size: large;
+.bio-section p,
+.bio-section ul {
+  font-size: 1.2rem;
+  line-height: 1.7;
+}
+
+.bio-keyword {
+  font-weight: bold;
+  color: #acd9d5; 
+}
+
+.bio-section ul {
+  list-style: none; 
+  padding-left: 0;
+}
+
+.bio-section ul li {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.bio-section ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  width: 1rem;
+  height: 1rem;
+  background-color: #378d84;
+  border-radius: 50%; 
 }
 
 .download-cv-btn {
-  background-color: #10b981;
+  background-color: #4fd1c5;
   color: #ffffff;
-  padding: 0.8rem 1.5rem;
-  border-radius: 8px;
+  padding: 1rem 2rem;
+  border-radius: 10px;
   text-align: center;
   text-decoration: none;
   font-weight: bold;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, transform 0.3s;
+  margin-top: 3rem;
+  max-width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 
 .download-cv-btn:hover {
-  background-color: #059669;
+  background-color: #4fd1c5;
+  transform: translateY(-5px);
 }
 
+.hover-cats {
+  position: relative;
+  color: #81e6d9;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
 
+.hover-cats:hover {
+  color: #4fd1c5;
+}
+
+.hover-cats:hover::after {
+  content: "";
+  position: absolute;
+  top: -120%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 150px;
+  background-image: url('/pets.jpg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -20%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
 
 @media (max-width: 768px) {
   .bio-container {
-    text-align: left;
+    padding: 2rem 1rem;
   }
 
   .bio-title {
-    font-size: 2rem; 
-    margin: 20px;
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
   }
 
   .bio-section {
-    padding: 1rem;
+    padding: 1.5rem;
+  }
+
+  .bio-section h3 {
+    font-size: 1.8rem;
+  }
+
+  .bio-section p,
+  .bio-section ul {
+    font-size: 1.1rem;
   }
 
   .download-cv-btn {
     font-size: 1rem;
-    padding: 0.5rem 1rem; 
+    padding: 0.8rem 1.5rem;
   }
 }
