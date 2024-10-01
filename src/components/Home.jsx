@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
+import useLanguage from '../context/useLanguage';
 import '../styles/Home.css';
-import { useLanguage } from './../context/LanguageContext';
 
 const Home = () => {
   const {language} = useLanguage();

@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
+import useLanguage from '../context/useLanguage';
 import "../styles/Bio.css";
-import { useLanguage } from './../context/LanguageContext';
 
 const Bio = () => {
   const {language} = useLanguage();

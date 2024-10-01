@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
+import useLanguage from '../context/useLanguage';
 import "../styles/MobileSidebar.css";
-import { useLanguage } from './../context/LanguageContext';
 
 const MobileSidebar = ({ onTabClick }) => {
   const [menuOpen, setMenuOpen] = useState(false);

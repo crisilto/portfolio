@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
+import useLanguage from '../context/useLanguage';
 import '../styles/Contact.css';
-import { useLanguage } from './../context/LanguageContext';
 
 const Contact = () => {
   const {language} = useLanguage();

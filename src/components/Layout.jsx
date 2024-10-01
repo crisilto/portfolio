@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { FaGithub, FaGlobe, FaLinkedin } from "react-icons/fa";
+import useLanguage from '../context/useLanguage';
 import "../styles/Layout.css";
-import { useLanguage } from './../context/LanguageContext';
 import Header from "./Header";
 import MobileSidebar from "./MobileSidebar";
 

@@ -5,7 +5,7 @@ import Contact from './components/Contact';
 import Home from './components/Home';
 import Layout from './components/Layout';
 import Projects from './components/Projects';
-import { useLanguage } from './context/LanguageContext';
+import useLanguage from './context/useLanguage';
 
 const App = () => {
   const { language, toggleLanguage } = useLanguage();

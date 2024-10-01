@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
+import useLanguage from '../context/useLanguage';
 import '../styles/Header.css';
-import { useLanguage } from './../context/LanguageContext';
 
 const Header = ({ onTabClick, onAddTab, currentTab }) => {
   const {language} = useLanguage();
