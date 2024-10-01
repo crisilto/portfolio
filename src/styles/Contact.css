@@ -92,29 +92,19 @@
   width: 100%;
 }
 
-.submit-button:hover {
-  background-color: #4fd1c5;
-  transform: translateY(-3px);
-}
-
 .second-column {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: flex-start;
   gap: 20px;
   background: #2d2f3b;
   padding: 20px;
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
   text-align: center;
+  align-items: center;
   width: 100%;
-}
-
-.contact-socials h3 {
-  font-size: 1.4rem;
-  margin-bottom: 15px;
-  color: #81e6d9;
 }
 
 .social-icons {
@@ -135,12 +125,6 @@
   transform: scale(1.2);
 }
 
-.contact-cv h3 {
-  font-size: 1.4rem;
-  margin-bottom: 10px;
-  color: #81e6d9;
-}
-
 .contact-cv {
   display: flex;
   flex-direction: column;
@@ -150,45 +134,65 @@
 .download-cv-btn {
   background-color: #81e6d9;
   color: #1f2333;
-  padding: 10px 15px;
+  padding: 9px 11px;
   border: none;
   border-radius: 8px;
   font-weight: bold;
   text-decoration: none;
-  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.download-cv-btn:hover {
+.download-cv-btn:hover,
+.meme-button:hover,
+.submit-button:hover{
   background-color: #4fd1c5;
   transform: translateY(-3px);
 }
 
-.contact-pets h3 {
-  font-size: 1.4rem;
-  margin-bottom: 10px;
-  color: #81e6d9;
-}
-
-.pets-photo {
+.contact-humor-button {
+  text-align: center;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.pets-photo img.avatar {
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
-  transition: transform 0.3s ease;
+.meme-button {
+  background-color: #81e6d9;
+  color: #1f2333;
+  padding: 14px 13px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.pets-photo img.avatar:hover {
-  transform: scale(1.05);
+.contact-humor {
+  text-align: center;
+  cursor: pointer;
+}
+
+.humor-image {
+  width: 200px;
+  height: auto;
+  margin-top: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.humor-text {
+  margin-top: 10px;
+  color: #81e6d9;
+  font-size: 0.9rem;
 }
 
 .second-column>div>h3 {
   font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #4fd1c5;
 }
 
 @media (max-width: 768px) {

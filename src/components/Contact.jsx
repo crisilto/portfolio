@@ -1,15 +1,21 @@
 import PropTypes from "prop-types";
-import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
+import { useState } from "react";
+import { FaCoffee, FaEnvelope, FaFileDownload, FaGithub, FaLinkedin } from "react-icons/fa";
 import useLanguage from "../context/useLanguage";
 import "../styles/Contact.css";
 
 const Contact = () => {
   const { language } = useLanguage();
+  const [showMeme, setShowMeme] = useState(false);
   const cvUrl = language === "en" ? "/CVen.pdf" : "/CVes.pdf";
 
   const handleSubmit = (event) => {
     event.preventDefault();
     alert(language === "en" ? "Form submitted!" : "¡Formulario enviado!");
+  };
+
+  const handleToggleMeme = () => {
+    setShowMeme(!showMeme);
   };
 
   return (
@@ -91,7 +97,7 @@ const Contact = () => {
 
         <div className="second-column">
           <div className="contact-socials">
-            <h3>{language === "en" ? "Find me on:" : "Encuéntrame en:"}</h3>
+            <h3>let findMe =</h3>
             <div className="social-icons">
               <a
                 href="mailto:crisilto1997@gmail.com"
@@ -118,19 +124,35 @@ const Contact = () => {
           </div>
 
           <div className="contact-cv">
-            <h3>!important</h3>
+            <h3>import &#123;&nbsp;CV&nbsp;&#125; from &#8216;crisilto&#8217; ;</h3>
             <div className="download-cv">
               <a href={cvUrl} download className="download-cv-btn">
-                {language === "en" ? "Download My CV" : "Descargar mi CV"}
+              <FaFileDownload />
               </a>
             </div>
           </div>
 
-          <div className="contact-pets">
-            <h3>const myPets = &#91; &quot;Lilith, Kenneth&quot;&#93; </h3>
-            <div className="pets-photo">
-              <img src="/pets.jpg" alt="My animals" className="avatar" />
-            </div>
+          <div className="contact-humor-button">
+            <h3>const coffeeBreak =</h3>
+
+            {!showMeme ? (
+              <button onClick={handleToggleMeme} className="meme-button">
+                <FaCoffee />
+              </button>
+            ) : (
+              <div className="contact-humor" onClick={handleToggleMeme}>
+                <img
+                  src="/this-is-fine.PNG"
+                  alt="This is fine meme"
+                  className="humor-image"
+                />
+                <p className="humor-text">
+                  {language === "en"
+                    ? "Even in chaos, everything is under control."
+                    : "Incluso en el caos, todo está bajo control."}
+                </p>
+              </div>
+            )}
           </div>
         </div>
       </div>
