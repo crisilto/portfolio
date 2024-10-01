@@ -1,7 +1,7 @@
 .contact-container {
   max-width: 900px;
   width: 100%;
-  margin: 0 auto;
+  margin: 100px auto;
   padding: 25px;
   background-color: #1f2333;
   border-radius: 15px;
@@ -139,6 +139,7 @@
   border-radius: 8px;
   font-weight: bold;
   text-decoration: none;
+  margin: 0px !important;
 }
 
 .download-cv-btn:hover,
@@ -200,6 +201,10 @@
     flex-direction: column;
     align-items: center;
     gap: 20px;
+  }
+
+  .contact-container{
+    margin: 0 auto;
   }
 
   .contact-form,
