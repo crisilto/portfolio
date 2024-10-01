@@ -1,10 +1,13 @@
-import { createRoot } from 'react-dom/client';
-import App from './App.jsx';
-import { LanguageProvider } from "./context/LanguageContext";
-import './index.css';
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+import { LanguageProvider } from './context/LanguageContext';
+import "./index.css";
 
-createRoot(document.getElementById('root')).render(
-  <LanguageProvider>
-    <App />
-  </LanguageProvider>,
-)
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <LanguageProvider>
+      <App />
+    </LanguageProvider>
+  </React.StrictMode>
+);
