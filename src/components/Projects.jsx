@@ -119,20 +119,28 @@ const Projects = () => {
       name: language === 'en' ? project.nameEn : project.nameEs,
       description: language === 'en' ? project.descriptionEn : project.descriptionEs,
     }));
-    setFilteredProjects(updatedProjects);
-  }, [language, projectsData]);
+
+    if (selectedTechnologies.length > 0) {
+      const filtered = updatedProjects.filter((project) =>
+        selectedTechnologies.some((tech) => project.technologies.includes(tech))
+      );
+      setFilteredProjects(filtered);
+    } else {
+      setFilteredProjects(updatedProjects);
+    }
+  }, [language, projectsData, selectedTechnologies]);
 
   const handleFilterChange = (selected) => {
     setSelectedTechnologies(selected);
-    let filtered = projectsData;
 
-    if (selected.length > 0) {
-      filtered = projectsData.filter((project) =>
-        selected.every((tech) => project.technologies.includes(tech))
+    if (selected.length === 0) {
+      setFilteredProjects(projectsData);
+    } else {
+      const filtered = projectsData.filter((project) =>
+        selected.some((tech) => project.technologies.includes(tech))
       );
+      setFilteredProjects(filtered);
     }
-
-    setFilteredProjects(filtered);
   };
 
   const techIconsMapping = {
@@ -153,7 +161,7 @@ const Projects = () => {
     if (selectedTechnologies.includes(tech)) {
       handleFilterChange(selectedTechnologies.filter((t) => t !== tech));
     } else {
-      handleFilterChange([...selectedTechnologies.filter((t) => t !== "All"), tech]);
+      handleFilterChange([...selectedTechnologies, tech]);
     }
   };
 

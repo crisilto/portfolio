@@ -1,18 +1,16 @@
 .projects-container {
-  display: flex;
+  padding: 4rem 2rem;
+  color: #d1d5db;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
-  color: #d1d5db;
-  gap: 25px;
-  flex-direction: column;
 }
 
 .projects-title {
-  font-size: 2.5rem;
-  color: #81e6d9;
-  margin-bottom: 20px;
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #4fd1c5;
   text-align: center;
+  margin-bottom: 3rem;
 }
 
 .projects-list {
@@ -102,8 +100,14 @@
   font-size: 1.2rem;
   color: #81e6d9;
 }
+.checkbox-list {
+  margin: 1rem 0.2rem;
+}
 
 @media (max-width: 768px) {
+  .projects-container{
+    padding: 1rem;
+  }
   .projects-title {
     font-size: 2rem;
     margin: 15px;
@@ -121,7 +125,8 @@
   .checkbox-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; 
+    justify-content: flex-start; 
+    margin: 1rem;
   }
 
   .project-card {
@@ -176,11 +181,6 @@
   .project-description {
     font-size: 0.95rem;
   }
-
-  .checkbox-list {
-    gap: 5px;
-  }
-
 
   .submit-button,
   .download-cv-btn {
