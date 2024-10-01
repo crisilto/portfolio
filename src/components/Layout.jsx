@@ -14,7 +14,7 @@ const Layout = ({
   onCloseTab,
   toggleLanguage,
 }) => {
-  const {language} = useLanguage();
+  const { language } = useLanguage();
 
   return (
     <div className="layout-container">
@@ -76,14 +76,7 @@ const Layout = ({
         <div className="bottom-left">
           <span>
             <a
-              href="#"
-              onClick={() => {
-                onAddTab({
-                  id: "_contact",
-                  label: language === "en" ? "_contact" : "_contacto",
-                });
-                onTabClick("_contact");
-              }}
+              href="mailto:crisilto1997@gmail.com?subject=PORTFOLIO:%20Cristina%20Silvestre"
             >
               crisilto1997@gmail.com
             </a>
