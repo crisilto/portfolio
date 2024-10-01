@@ -129,7 +129,7 @@ const Contact = () => {
           <div className="contact-pets">
             <h3>const myPets = &#91; &quot;Lilith, Kenneth&quot;&#93; </h3>
             <div className="pets-photo">
-              <img src="public\pets.jpg" alt="My animals" className="avatar" />
+              <img src="/pets.jpg" alt="My animals" className="avatar" />
             </div>
           </div>
         </div>
