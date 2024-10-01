@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { BiLogoSpringBoot } from "react-icons/bi";
 import { FaBootstrap, FaCss3Alt, FaExternalLinkAlt, FaGithub, FaHtml5, FaJava, FaJsSquare, FaPhp, FaReact } from 'react-icons/fa';
 import { GrMysql } from "react-icons/gr";
 import { RiH2 } from "react-icons/ri";
 import { SiSass } from "react-icons/si";
-import { useLanguage } from './../context/LanguageContext';
+import useLanguage from '../context/useLanguage';
 
 import '../styles/Projects.css';
 import FilterBar from './FilterBar';
@@ -13,7 +13,7 @@ import FilterBar from './FilterBar';
 const Projects = () => {
   const { language } = useLanguage();
 
-  const allTechnologies = [
+  const allTechnologies = useMemo(() => [
     'HTML',
     'CSS',
     'JavaScript',
@@ -25,109 +25,109 @@ const Projects = () => {
     'SASS',
     'Java',
     'Bootstrap',
-  ];
+  ], []);
 
-  const projects = [
+  const projectsData = useMemo(() => [
     {
       id: 1,
-      name: language === 'en' ? 'Dev365' : 'Dev365',
-      description: language === 'en'
-        ? '2nd DAW Final project - A complete website with casino games.'
-        : 'Proyecto final del 2º DAW - Un sitio web completo con juegos de casino.',
+      nameEn: 'Dev365',
+      nameEs: 'Dev365',
+      descriptionEn: '2nd DAW Final project - A complete website with casino games.',
+      descriptionEs: 'Proyecto final del 2º DAW - Un sitio web completo con juegos de casino.',
       githubUrl: 'https://github.com/crisilto/dev365',
       demoUrl: '',
       technologies: ['HTML', 'CSS', 'JavaScript', 'PHP', 'MySQL']
     },
     {
       id: 2,
-      name: language === 'en' ? 'FakeBook' : 'FakeBook',
-      description: language === 'en'
-        ? 'A Facebook-inspired social media clone demonstrating full-stack capabilities.'
-        : 'Un clon de Facebook que demuestra capacidades de desarrollo full-stack.',
+      nameEn: 'FakeBook',
+      nameEs: 'FakeBook',
+      descriptionEn: 'A Facebook-inspired social media clone demonstrating full-stack capabilities.',
+      descriptionEs: 'Un clon de Facebook que demuestra capacidades de desarrollo full-stack.',
       githubUrl: '',
       demoUrl: '',
       technologies: ['React', 'SpringBoot', 'H2', 'SASS']
     },
     {
       id: 3,
-      name: language === 'en' ? 'GymrApp' : 'GymrApp',
-      description: language === 'en'
-        ? 'Track your workouts and progress. Includes user data visualization.'
-        : 'Registra tus entrenamientos y progres. Incluye visualización de datos del usuario.',
+      nameEn: 'GymrApp',
+      nameEs: 'GymrApp',
+      descriptionEn: 'Track your workouts and progress. Includes user data visualization.',
+      descriptionEs: 'Registra tus entrenamientos y progresos. Incluye visualización de datos del usuario.',
       githubUrl: '',
       demoUrl: '',
       technologies: ['React', 'SpringBoot', 'H2', 'SASS']
     },
     {
       id: 4,
-      name: language === 'en' ? 'TaskManager API' : 'API Gestor de Tareas',
-      description: language === 'en'
-        ? 'A REST API for managing tasks and projects, built with Java and Spring Boot.'
-        : 'Una API REST para gestionar tareas y proyectos, desarrollada con Java y Spring Boot.',
+      nameEn: 'TaskManager API',
+      nameEs: 'API Gestor de Tareas',
+      descriptionEn: 'A REST API for managing tasks and projects, built with Java and Spring Boot.',
+      descriptionEs: 'Una API REST para gestionar tareas y proyectos, desarrollada con Java y Spring Boot.',
       githubUrl: '',
       demoUrl: '',
       technologies: ['Java', 'SpringBoot']
     },
     {
       id: 5,
-      name: language === 'en' ? 'SimpleBlog' : 'BlogSimple',
-      description: language === 'en'
-        ? 'A basic blog platform featuring CRUD operations for posts.'
-        : 'Una plataforma de blog básica con operaciones CRUD para publicaciones.',
+      nameEn: 'SimpleBlog',
+      nameEs: 'BlogSimple',
+      descriptionEn: 'A basic blog platform featuring CRUD operations for posts.',
+      descriptionEs: 'Una plataforma de blog básica con operaciones CRUD para publicaciones.',
       githubUrl: '',
       demoUrl: '',
       technologies: ['PHP']
     },
     {
       id: 6,
-      name: language === 'en' ? 'Paintribution' : 'Paintribution',
-      description: language === 'en'
-        ? 'Github contributions panel clone. Click to relieve stress!'
-        : 'Clon del panel de contribuciones de GitHub. ¡Haz clic para aliviar el estrés!',
+      nameEn: 'Paintribution',
+      nameEs: 'Paintribution',
+      descriptionEn: 'Github contributions panel clone. Click to relieve stress!',
+      descriptionEs: 'Clon del panel de contribuciones de GitHub. ¡Haz clic para aliviar el estrés!',
       githubUrl: 'https://github.com/crisilto/paintribution',
       demoUrl: 'https://paintribution.vercel.app',
       technologies: ['JavaScript', 'React', 'CSS']
     },
     {
       id: 7,
-      name: language === 'en' ? 'Vidly' : 'Vidly',
-      description: language === 'en'
-        ? 'A simple but functional movies library.'
-        : 'Una biblioteca de películas simple pero funcional.',
+      nameEn: 'Vidly',
+      nameEs: 'Vidly',
+      descriptionEn: 'A simple but functional movies library',
+      descriptionEs: 'Una biblioteca de películas simple pero funcional.',
       githubUrl: 'https://github.com/crisilto/movies-with-react',
       demoUrl: 'https://movies-with-react-phi.vercel.app/movies',
       technologies: ['JavaScript', 'React', 'Bootstrap']
     },
     {
       id: 8,
-      name: language === 'en' ? 'Actuality & Goal' : 'Actualidad & Gol',
-      description: language === 'en'
-        ? 'Layout made with vanilla html and css of a digital sports newspaper.'
-        : 'Maquetación en HTML y CSS vanilla de un periódico digital deportivo.',
+      nameEn: 'Actuality & Goal',
+      nameEs: 'Actualidad & Gol',
+      descriptionEn: 'Layout made with vanilla html and css of a digital sports newspaper.',
+      descriptionEs: 'Maquetación en HTML y CSS vanilla de un periódico digital deportivo.',
       githubUrl: 'https://github.com/crisilto/actualidad-y-gol',
       demoUrl: 'https://actualidad-y-gol.vercel.app',
       technologies: ['HTML', 'CSS']
     },
-  ];
+  ], []);
 
   const [selectedTechnologies, setSelectedTechnologies] = useState([]);
-  const [filteredProjects, setFilteredProjects] = useState(projects);
+  const [filteredProjects, setFilteredProjects] = useState(projectsData);
 
   useEffect(() => {
-    const updatedProjects = projects.map((project) => ({
+    const updatedProjects = projectsData.map((project) => ({
       ...project,
-      name: language === 'en' ? project.name : project.name,
-      description: language === 'en' ? project.description : project.description,
+      name: language === 'en' ? project.nameEn : project.nameEs,
+      description: language === 'en' ? project.descriptionEn : project.descriptionEs,
     }));
     setFilteredProjects(updatedProjects);
-  }, [language]);
+  }, [language, projectsData]);
 
   const handleFilterChange = (selected) => {
     setSelectedTechnologies(selected);
-    let filtered = projects;
+    let filtered = projectsData;
 
     if (selected.length > 0) {
-      filtered = projects.filter((project) =>
+      filtered = projectsData.filter((project) =>
         selected.every((tech) => project.technologies.includes(tech))
       );
     }
