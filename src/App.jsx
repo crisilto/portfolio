@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import './App.css';
 import Bio from './components/Bio';
 import Contact from './components/Contact';
@@ -12,7 +12,7 @@ const App = () => {
   const [activeTabs, setActiveTabs] = useState([{ id: '_home', label: '_home' }]);
   const [currentTab, setCurrentTab] = useState('_home');
 
-  const getTabLabel = (tabId) => {
+  const getTabLabel = useCallback((tabId) => {
     switch (tabId) {
       case '_home':
         return language === 'en' ? '_home' : '_inicio';
@@ -25,15 +25,21 @@ const App = () => {
       default:
         return tabId;
     }
-  };
+  }, [language]);
 
   useEffect(() => {
     const updatedTabs = activeTabs.map((tab) => ({
       ...tab,
       label: getTabLabel(tab.id),
     }));
-    setActiveTabs(updatedTabs);
-  }, [language]);
+
+    const hasTabsChanged = activeTabs.some((tab, index) => tab.label !== updatedTabs[index].label);
+
+    if (hasTabsChanged) {
+      setActiveTabs(updatedTabs);
+    }
+  }, [language, getTabLabel, activeTabs]);
+
 
   const handleTabClick = (tabId) => {
     setCurrentTab(tabId);
