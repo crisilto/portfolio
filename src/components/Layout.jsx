@@ -28,7 +28,6 @@ const Layout = ({
       <div className="top-bar">
         <span className="username">
           <a
-            href="#"
             onClick={() => {
               onAddTab({
                 id: "_home",
