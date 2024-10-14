@@ -128,22 +128,29 @@
 .contact-cv {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 5px;
 }
 
-.download-cv-btn {
+.common-button {
   background-color: #81e6d9;
   color: #1f2333;
-  padding: 9px 11px;
+  padding: 12px 20px;
   border: none;
   border-radius: 8px;
   font-weight: bold;
-  text-decoration: none;
-  margin: 0px !important;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 200px;
+  max-width: 100%; 
+  font-size: 1.1rem;
 }
 
-.download-cv-btn:hover,
-.meme-button:hover,
+.common-button:hover,
 .submit-button:hover{
   background-color: #4fd1c5;
   transform: translateY(-3px);
@@ -155,20 +162,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.meme-button {
-  background-color: #81e6d9;
-  color: #1f2333;
-  padding: 14px 13px;
-  border: none;
-  border-radius: 8px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  display: flex;
-  align-items: center;
-  gap: 10px;
 }
 
 .contact-humor {
@@ -194,6 +187,8 @@
   font-size: 1.1rem;
   margin-bottom: 10px;
   color: #4fd1c5;
+  text-align: center;
+  white-space: nowrap;
 }
 
 @media (max-width: 768px) {

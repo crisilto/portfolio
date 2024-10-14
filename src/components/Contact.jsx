@@ -126,7 +126,7 @@ const Contact = () => {
           <div className="contact-cv">
             <h3>import &#123;&nbsp;CV&nbsp;&#125; from &#8216;crisilto&#8217; ;</h3>
             <div className="download-cv">
-              <a href={cvUrl} download className="download-cv-btn">
+              <a href={cvUrl} download className="common-button">
               <FaFileDownload />
               </a>
             </div>
@@ -136,7 +136,7 @@ const Contact = () => {
             <h3>const coffeeBreak =</h3>
 
             {!showMeme ? (
-              <button onClick={handleToggleMeme} className="meme-button">
+              <button onClick={handleToggleMeme} className="common-button">
                 <FaCoffee />
               </button>
             ) : (
