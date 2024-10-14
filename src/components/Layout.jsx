@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
-import { FaGithub, FaGlobe, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaGlobe, FaLinkedin, FaMoon, FaSun } from "react-icons/fa";
 import useLanguage from '../context/useLanguage';
+import { useTheme } from "../context/useTheme";
 import "../styles/Layout.css";
 import Header from "./Header";
 import MobileSidebar from "./MobileSidebar";
@@ -15,6 +16,7 @@ const Layout = ({
   toggleLanguage,
 }) => {
   const { language } = useLanguage();
+  const { theme, toggleTheme } = useTheme();
 
   return (
     <div className="layout-container">
@@ -60,6 +62,11 @@ const Layout = ({
             onAddTab={onAddTab}
             language={language}
           />
+
+          <button className="icon-button" onClick={toggleTheme}>
+            {theme === 'light' ? <FaSun className="icon sun" /> : <FaMoon className="icon moon" />}
+          </button>
+
           <button className="icon-button" onClick={toggleLanguage}>
             <FaGlobe />
           </button>

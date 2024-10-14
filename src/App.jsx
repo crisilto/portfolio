@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
 import { Route, Routes, useNavigate } from 'react-router-dom';
-import './App.css';
 import Bio from './components/Bio';
 import Contact from './components/Contact';
 import Home from './components/Home';

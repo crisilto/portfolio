@@ -29,6 +29,16 @@
     gap: 10px;
 }
 
+
+.sun {
+    color: #fbbf24;
+}
+
+.moon {
+    color: #9ca3af;
+}
+
+
 .icon-button {
     background: none;
     border: none;
@@ -226,21 +236,25 @@
     .icon-button.mobile-menu-btn {
         display: flex !important;
     }
+
     .tabs-header {
         display: none;
     }
+
     .main-layout {
         margin-left: 0;
         margin-top: 0;
     }
+
     .sidebar {
         display: none !important;
     }
+
     .main-content {
         padding: 30px 20px;
         margin-top: 50px;
-        height: auto; 
-        overflow-y: auto; 
-        display: block; 
+        height: auto;
+        overflow-y: auto;
+        display: block;
     }
 }
