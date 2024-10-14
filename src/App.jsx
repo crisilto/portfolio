@@ -1,9 +1,11 @@
 import { useCallback, useEffect, useState } from 'react';
+import { Route, Routes, useNavigate } from 'react-router-dom';
 import './App.css';
 import Bio from './components/Bio';
 import Contact from './components/Contact';
 import Home from './components/Home';
 import Layout from './components/Layout';
+import NotFound from './components/NotFound';
 import Projects from './components/Projects';
 import useLanguage from './context/useLanguage';
 
@@ -11,6 +13,7 @@ const App = () => {
   const { language, toggleLanguage } = useLanguage();
   const [activeTabs, setActiveTabs] = useState([{ id: '_home', label: '_home' }]);
   const [currentTab, setCurrentTab] = useState('_home');
+  const navigate = useNavigate();
 
   const getTabLabel = useCallback((tabId) => {
     switch (tabId) {
@@ -43,6 +46,7 @@ const App = () => {
 
   const handleTabClick = (tabId) => {
     setCurrentTab(tabId);
+    navigate(tabId.replace('_', '/'));
   };
 
   const handleAddTab = (tab) => {
@@ -50,28 +54,16 @@ const App = () => {
       setActiveTabs([...activeTabs, tab]);
     }
     setCurrentTab(tab.id);
+    navigate(tab.id.replace('_', '/'));
   };
 
   const handleCloseTab = (tabId) => {
     const updatedTabs = activeTabs.filter((tab) => tab.id !== tabId);
     setActiveTabs(updatedTabs);
     if (currentTab === tabId) {
-      setCurrentTab(updatedTabs.length ? updatedTabs[0].id : '_home');
-    }
-  };
-
-  const renderContent = () => {
-    switch (currentTab) {
-      case '_home':
-        return <Home language={language} />;
-      case '_bio':
-        return <Bio language={language} />;
-      case '_projects':
-        return <Projects language={language} />;
-      case '_contact':
-        return <Contact language={language} />;
-      default:
-        return null;
+      const newTab = updatedTabs.length ? updatedTabs[0].id : '_home';
+      setCurrentTab(newTab);
+      navigate(newTab.replace('_', '/'));
     }
   };
 
@@ -85,7 +77,13 @@ const App = () => {
       toggleLanguage={toggleLanguage}
       language={language}
     >
-      {renderContent()}
+      <Routes>
+        <Route path='/home' element={<Home />} />
+        <Route path='/bio' element={<Bio />} />
+        <Route path='/projects' element={<Projects />} />
+        <Route path='/contact' element={<Contact />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </Layout>
   );
 };
