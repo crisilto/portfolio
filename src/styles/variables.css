@@ -1,26 +1,73 @@
 :root {
-  --bg-color: #0d1117;
-  --section-bg-color: #161b22;
-  --text-color: #c9d1d9;
-  --muted-text-color: #8b949e;
-  --primary-color: #58a6ff;
-  --border-color: #30363d;
-  --hover-color: #1f6feb;
-  --accent-color: #3fb950;
-  --error-color: #f85149;
-
   --border-radius: 8px;
   --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+
+  --background-color: #0D1117;
+  --text-primary-color: #F0F6FC;
+
+
+  --nav-bg-color: #010409;
+  --nav-border-color: #3C434D;
+  --nav-hover-bg-color: #161B22;
+
+
+  --button-bg-color: #262C36;
+  --button-hover-bg-color: #303744;
+  --button-text-color: #F0F6FC;
+  --icon-color: #9198A1;
+  --icon-hover-color: #B0B6BF;
+
+
+  --accent-color: #29903B;
+  --accent-hover-color: #3BA850;
+  --link-color: #4493F8;
+  --link-hover-color: #63A5FA;
+
+
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 32px;
+  --spacing-xl: 64px;
+
+  --container-max-width: 1200px;
+  --container-padding: 20px;
+
+
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-md: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 24px;
+  --font-size-xxl: 32px;
+
+
+  --box-shadow-light: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --box-shadow-medium: 0 4px 8px rgba(0, 0, 0, 0.2);
+  --box-shadow-dark: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 [data-theme="light"] {
-  --bg-color: #f6f8fa;
-  --section-bg-color: #ffffff;
-  --text-color: #24292e;
-  --muted-text-color: #57606a;
-  --primary-color: #0969da;
-  --border-color: #d0d7de;
-  --hover-color: #005cc5;
-  --accent-color: #2da44e;
-  --error-color: #cf222e;
+
+  --background-color: #FFFFFF;
+  --text-primary-color: #1F2328;
+
+
+  --nav-bg-color: #F6F8FA;
+  --nav-border-color: #D0D8E0;
+  --nav-hover-bg-color: #E5E7EB;
+
+
+  --button-bg-color: #EFF2F5;
+  --button-hover-bg-color: #DDE2E6;
+  --button-text-color: #25292E;
+  --icon-color: #59636E;
+  --icon-hover-color: #6B7480;
+
+
+  --accent-color: #1C8139;
+  --accent-hover-color: #2D954A;
+  --link-color: #0969DA;
+  --link-hover-color: #2B7CE4;
 }

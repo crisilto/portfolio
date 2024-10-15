@@ -1,29 +1,29 @@
 .bio-container {
-  padding: 4rem 2rem;
-  color: #d1d5db;
+  padding: var(--spacing-lg) var(--spacing-md);
+  color: var(--text-primary-color);
   max-width: 1000px;
   margin: 0 auto;
 }
 
 .bio-title {
-  font-size: 2.8rem;
+  font-size: var(--font-size-xxl); 
   font-weight: bold;
-  color: #4fd1c5;
+  color: var(--accent-color); 
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: var(--spacing-lg);
 }
 
 .bio-content {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: var(--spacing-lg); 
 }
 
 .bio-section {
-  background-color: #1f1f2e;
-  padding: 2.5rem;
-  border-radius: 15px;
-  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+  background-color: var(--background-color); 
+  padding: var(--spacing-lg); 
+  border-radius: var(--border-radius); 
+  box-shadow: var(--box-shadow-medium); 
   position: relative;
   overflow: hidden;
   transition: transform 0.3s, box-shadow 0.3s;
@@ -31,36 +31,36 @@
 
 .bio-section:hover {
   transform: translateY(-10px);
-  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.3);
+  box-shadow: var(--box-shadow-dark); 
 }
 
 .bio-section h3 {
-  font-size: 2rem;
-  color: #4fd1c5;
-  margin-bottom: 1.5rem;
+  font-size: var(--font-size-xl);
+  color: var(--accent-color); 
+  margin-bottom: var(--spacing-md); 
   position: relative;
 }
 
 .bio-section p,
 .bio-section ul {
-  font-size: 1.2rem;
+  font-size: var(--font-size-md);
   line-height: 1.7;
 }
 
 .bio-keyword {
   font-weight: bold;
-  color: #acd9d5; 
+  color: var(--accent-hover-color); 
 }
 
 .bio-section ul {
-  list-style: none; 
+  list-style: none;
   padding-left: 0;
 }
 
 .bio-section ul li {
   position: relative;
-  padding-left: 2rem;
-  margin-bottom: 1.5rem;
+  padding-left: var(--spacing-lg); 
+  margin-bottom: var(--spacing-md); 
 }
 
 .bio-section ul li::before {
@@ -70,20 +70,20 @@
   top: 0.5rem;
   width: 1rem;
   height: 1rem;
-  background-color: #378d84;
+  background-color: var(--accent-color); 
   border-radius: 50%; 
 }
 
 .download-cv-btn {
-  background-color: #4fd1c5;
-  color: #ffffff;
-  padding: 1rem 2rem;
-  border-radius: 10px;
+  background-color: var(--accent-color);
+  color: var(--text-primary-color); 
+  padding: var(--spacing-md) var(--spacing-lg); 
+  border-radius: var(--border-radius); 
   text-align: center;
   text-decoration: none;
   font-weight: bold;
   transition: background-color 0.3s, transform 0.3s;
-  margin-top: 3rem;
+  margin-top: var(--spacing-lg); 
   max-width: 200px;
   margin-left: auto;
   margin-right: auto;
@@ -91,19 +91,19 @@
 }
 
 .download-cv-btn:hover {
-  background-color: #4fd1c5;
-  transform: translateY(-5px);
+  background-color: var(--accent-hover-color); 
+  transform: translateY(-5px); 
 }
 
 .hover-cats {
   position: relative;
-  color: #81e6d9;
+  color: var(--accent-color); 
   cursor: pointer;
   transition: color 0.3s ease;
 }
 
 .hover-cats:hover {
-  color: #4fd1c5;
+  color: var(--accent-hover-color); 
 }
 
 .hover-cats:hover::after {
@@ -117,8 +117,8 @@
   background-image: url('/pets.jpg');
   background-size: cover;
   background-position: center;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border-radius: var(--border-radius); 
+  box-shadow: var(--box-shadow-light);
   opacity: 0;
   animation: fadeIn 0.5s forwards;
 }
@@ -136,29 +136,29 @@
 
 @media (max-width: 768px) {
   .bio-container {
-    padding: 2rem 1rem;
+    padding: var(--spacing-md) var(--spacing-sm); 
   }
 
   .bio-title {
-    font-size: 2.2rem;
-    margin-bottom: 2rem;
+    font-size: var(--font-size-xl); 
+    margin-bottom: var(--spacing-md); 
   }
 
   .bio-section {
-    padding: 1.5rem;
+    padding: var(--spacing-md);
   }
 
   .bio-section h3 {
-    font-size: 1.8rem;
+    font-size: var(--font-size-lg); 
   }
 
   .bio-section p,
   .bio-section ul {
-    font-size: 1.1rem;
+    font-size: var(--font-size-md); 
   }
 
   .download-cv-btn {
-    font-size: 1rem;
-    padding: 0.8rem 1.5rem;
+    font-size: var(--font-size-md); 
+    padding: var(--spacing-sm) var(--spacing-md); 
   }
 }
