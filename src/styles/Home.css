@@ -77,7 +77,7 @@
   .home-title,
   .home-name,
   .home-role {
-    font-size: var(--font-size-md); 
+    font-size: var(--font-size-xxl); 
   }
 
   .home-links {
