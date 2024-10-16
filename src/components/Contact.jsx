@@ -10,6 +10,7 @@ import {
 } from "react-icons/fa";
 import useLanguage from "../context/useLanguage";
 import "../styles/Contact.css";
+import ConfirmationMessage from "./ConfirmationMessage";
 
 const Contact = () => {
   const { language } = useLanguage();
@@ -21,6 +22,9 @@ const Contact = () => {
     subject: "",
     message: "",
   });
+  const [showConfirmation, setShowConfirmation] = useState(false);
+  const [confirmationMessage, setConfirmationMessage] = useState("");
+  const [confirmationType, setConfirmationType] = useState("success");
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -34,18 +38,24 @@ const Contact = () => {
       )
       .then(
         () => {
-          alert(
+          setConfirmationMessage(
             language === "en"
-              ? "Form successfully submitted!"
-              : "¡Formulario enviado con éxito!"
+              ? "Form submitted successfully!"
+              : "Formulario enviado exitosamente!"
           );
+          setConfirmationType("success");
+          setShowConfirmation(true);
+          setTimeout(() => setShowConfirmation(false), 3000);
         },
         () => {
-          alert(
+          setConfirmationMessage(
             language === "en"
               ? "Failed to send the form!"
-              : "¡Error al enviar el formulario!"
+              : "Error al enviar el formulario!"
           );
+          setConfirmationType("error");
+          setShowConfirmation(true);
+          setTimeout(() => setShowConfirmation(false), 3000);
         }
       );
 
@@ -75,6 +85,15 @@ const Contact = () => {
           ? "Fill out the form below and I'll get back to you"
           : "Rellena el formulario abajo y me pondré en contacto contigo"}
       </p>
+
+      {showConfirmation && (
+        <ConfirmationMessage
+          message={confirmationMessage}
+          type={confirmationType}
+          onClose={() => setShowConfirmation(false)}
+        />
+      )}
+
       <div className="contact-content">
         <div className="contact-form">
           <form onSubmit={handleSubmit}>

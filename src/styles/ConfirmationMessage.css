@@ -1,0 +1,61 @@
+.confirmation-message {
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
+    padding: 15px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    margin: 20px 0;
+    font-size: 1.1rem;
+    box-shadow: var(--box-shadow-light);
+    position: relative;
+    display: inline-block;
+    animation: fadeInOut 0.5s ease-in-out, fadeOut 3s ease-out;
+  }
+  
+  
+  .confirmation-message.success {
+    background-color: var(--success-bg-color); 
+    color: var(--success-text-color); 
+  }
+  
+  
+  .confirmation-message.error {
+    background-color: var(--error-bg-color); 
+    color: var(--error-text-color); 
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--button-text-color);
+    cursor: pointer;
+  }
+  
+  .close-btn:hover {
+    background-color: var(--button-hover-bg-color);
+  }
+  
+  @keyframes fadeInOut {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+    80% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }  
