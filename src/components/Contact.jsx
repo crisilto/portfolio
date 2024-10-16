@@ -1,6 +1,13 @@
+import emailjs from "emailjs-com";
 import PropTypes from "prop-types";
 import { useState } from "react";
-import { FaCoffee, FaEnvelope, FaFileDownload, FaGithub, FaLinkedin } from "react-icons/fa";
+import {
+  FaCoffee,
+  FaEnvelope,
+  FaFileDownload,
+  FaGithub,
+  FaLinkedin,
+} from "react-icons/fa";
 import useLanguage from "../context/useLanguage";
 import "../styles/Contact.css";
 
@@ -8,10 +15,50 @@ const Contact = () => {
   const { language } = useLanguage();
   const [showMeme, setShowMeme] = useState(false);
   const cvUrl = language === "en" ? "/CVen.pdf" : "/CVes.pdf";
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    alert(language === "en" ? "Form submitted!" : "¡Formulario enviado!");
+
+    emailjs
+      .sendForm(
+        "service_bpllun9",
+        "template_y666vw8",
+        event.target,
+        "mr3R8UI6Ps3rDKvtC"
+      )
+      .then(
+        () => {
+          alert(
+            language === "en"
+              ? "Form successfully submitted!"
+              : "¡Formulario enviado con éxito!"
+          );
+        },
+        () => {
+          alert(
+            language === "en"
+              ? "Failed to send the form!"
+              : "¡Error al enviar el formulario!"
+          );
+        }
+      );
+
+    setFormData({
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+    });
+  };
+
+  const handleInputChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleToggleMeme = () => {
@@ -39,6 +86,8 @@ const Contact = () => {
                 type="text"
                 id="name"
                 name="name"
+                value={formData.name}
+                onChange={handleInputChange}
                 required
                 placeholder={
                   language === "en" ? "Enter your name" : "Ingrese su nombre"
@@ -53,6 +102,8 @@ const Contact = () => {
                 type="email"
                 id="email"
                 name="email"
+                value={formData.email}
+                onChange={handleInputChange}
                 required
                 placeholder={
                   language === "en" ? "name@example.com" : "nombre@ejemplo.com"
@@ -67,6 +118,8 @@ const Contact = () => {
                 type="text"
                 id="subject"
                 name="subject"
+                value={formData.subject}
+                onChange={handleInputChange}
                 required
                 placeholder={
                   language === "en" ? "Enter your subject" : "Ingrese el asunto"
@@ -81,6 +134,8 @@ const Contact = () => {
                 id="message"
                 name="message"
                 rows="5"
+                value={formData.message}
+                onChange={handleInputChange}
                 required
                 placeholder={
                   language === "en"
@@ -124,10 +179,12 @@ const Contact = () => {
           </div>
 
           <div className="contact-cv">
-            <h3>import &#123;&nbsp;CV&nbsp;&#125; from &#8216;crisilto&#8217; ;</h3>
+            <h3>
+              import &#123;&nbsp;CV&nbsp;&#125; from &#8216;crisilto&#8217; ;
+            </h3>
             <div className="download-cv">
               <a href={cvUrl} download className="common-button">
-              <FaFileDownload />
+                <FaFileDownload />
               </a>
             </div>
           </div>
