@@ -205,7 +205,7 @@ const Projects = () => {
               {project.technologies.map((tech) => {
                 const TechIcon = techIconsMapping[tech];
                 return (
-                  <span key={tech} className="tech-tag" onClick={() => handleIconClick(tech)}>
+                  <span key={tech} className="tech-tag" onClick={() => handleIconClick(tech)} title={tech}>
                     <TechIcon className="tech-icon" />
                   </span>
                 );
