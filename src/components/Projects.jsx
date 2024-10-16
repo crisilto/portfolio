@@ -122,7 +122,7 @@ const Projects = () => {
 
     if (selectedTechnologies.length > 0) {
       const filtered = updatedProjects.filter((project) =>
-        selectedTechnologies.some((tech) => project.technologies.includes(tech))
+        selectedTechnologies.every((tech) => project.technologies.includes(tech))
       );
       setFilteredProjects(filtered);
     } else {
