@@ -78,7 +78,8 @@ const App = () => {
     >
       <Routes>
         <Route path="/" element={<Home language={language} />} />
-        <Route path="/home" element={<Home language={language} />} />        <Route path='/bio' element={<Bio />} />
+        <Route path="/home" element={<Home language={language} />} />        
+        <Route path='/bio' element={<Bio />} />
         <Route path='/projects' element={<Projects />} />
         <Route path='/contact' element={<Contact />} />
         <Route path="*" element={<NotFound />} />
