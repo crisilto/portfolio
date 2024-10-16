@@ -6,24 +6,20 @@
   --background-color: #0D1117;
   --text-primary-color: #F0F6FC;
 
-
   --nav-bg-color: #010409;
   --nav-border-color: #3C434D;
   --nav-hover-bg-color: #161B22;
-
 
   --button-bg-color: #262C36;
   --button-hover-bg-color: #303744;
   --button-text-color: #F0F6FC;
   --icon-color: #9198A1;
-  --icon-hover-color: #B0B6BF;
-
+  --icon-hover-color: #d5d8dc;
 
   --accent-color: #29903B;
   --accent-hover-color: #3BA850;
   --link-color: #4493F8;
   --link-hover-color: #63A5FA;
-
 
   --spacing-xs: 4px;
   --spacing-sm: 8px;
@@ -53,18 +49,15 @@
   --background-color: #FFFFFF;
   --text-primary-color: #1F2328;
 
-
   --nav-bg-color: #F6F8FA;
   --nav-border-color: #D0D8E0;
   --nav-hover-bg-color: #E5E7EB;
-
 
   --button-bg-color: #EFF2F5;
   --button-hover-bg-color: #DDE2E6;
   --button-text-color: #25292E;
   --icon-color: #59636E;
   --icon-hover-color: #6B7480;
-
 
   --accent-color: #1C8139;
   --accent-hover-color: #2D954A;

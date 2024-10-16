@@ -1,29 +1,30 @@
 .notfound-container {
-    text-align: center;
-    margin-top: 50px;
-  }
-  
-  .notfound-container h1 {
-    font-size: 5rem;
-    color: #ff6b6b;
-  }
-  
-  .notfound-container p {
-    font-size: 1.5rem;
-    color: #d1d5db;
-  }
-  
-  .back-home-btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #81e6d9;
-    color: #1f2333;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: bold;
-  }
-  
-  .back-home-btn:hover {
-    background-color: #4fd1c5;
-  }  
+  text-align: center;
+  margin-top: 50px;
+}
+
+.notfound-container h1 {
+  font-size: 5rem;
+  color: var(--accent-color); 
+}
+
+.notfound-container p {
+  font-size: 1.5rem;
+  color: var(--text-primary-color); 
+}
+
+.back-home-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: var(--accent-color); 
+  color: var(--button-text-color); 
+  text-decoration: none;
+  border-radius: var(--border-radius); 
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.back-home-btn:hover {
+  background-color: var(--accent-hover-color); 
+}

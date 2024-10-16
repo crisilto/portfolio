@@ -4,8 +4,8 @@
   align-items: center;
   justify-content: center;
   height: 100%;
-  color: #d1d5db;
-  padding: 20px;
+  color: var(--text-primary-color); 
+  padding: var(--spacing-lg);
   text-align: center;
 }
 
@@ -14,41 +14,47 @@
   height: 200px;
   border-radius: 50%;
   object-fit: cover;
-  border: 5px solid #2d2f3b;
+  border: 5px solid var(--nav-border-color); 
+}
+
+.avatar:hover{
+  border: 5px solid var(--accent-color);
+  transition: border 0.3s ease;
+  cursor: pointer;
 }
 
 .home-title {
-  font-size: 2rem;
-  margin: 10px 0;
+  font-size: var(--font-size-xl); 
+  margin: var(--spacing-sm) 0;
 }
 
 .home-name {
-  font-size: 3rem;
+  font-size: var(--font-size-xxl); 
   font-weight: bold;
-  margin: 5px 0;
+  margin: var(--spacing-xs) 0;
 }
 
 .home-role {
-  font-size: 1.5rem;
-  color: #10b981;
-  margin: 5px 0 20px;
+  font-size: var(--font-size-lg); 
+  color: var(--accent-color); 
+  margin: var(--spacing-xs) 0 var(--spacing-md);
 }
 
 .home-description {
-  font-size: 1.2rem;
-  line-height: 1.5;
-  color: #9ca3af;
+  font-size: var(--font-size-md); 
+  line-height: var(--line-height-md); 
+  color: var(--text-secondary-color); 
 }
 
 .home-links {
-  margin-top: 20px;
-  font-size: 1.1rem;
-  line-height: 1.5;
-  color: #10b981;
+  margin-top: var(--spacing-md); 
+  font-size: var(--font-size-md); 
+  line-height: var(--line-height-md);
+  color: var(--accent-color); 
 }
 
 .home-links a {
-  color: #0ea5e9;
+  color: var(--link-color); 
   text-decoration: none;
 }
 
@@ -58,7 +64,7 @@
 
 @media (max-width: 768px) {
   .home-container {
-    padding: 10px;
+    padding: var(--spacing-sm);
     text-align: center;
     justify-content: center;
   }
@@ -71,14 +77,14 @@
   .home-title,
   .home-name,
   .home-role {
-    font-size: 1.5rem;
+    font-size: var(--font-size-md); 
   }
 
   .home-links {
-    font-size: 1rem;
+    font-size: var(--font-size-sm); 
   }
 
   .home-container {
-    padding: 10px; 
+    padding: var(--spacing-sm);
   }
 }

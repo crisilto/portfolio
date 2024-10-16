@@ -3,43 +3,42 @@
   width: 100%;
   margin: 100px auto;
   padding: 25px;
-  background-color: #1f2333;
+  background-color: var(--nav-hover-bg-color);
   border-radius: 15px;
-  color: #d1d5db;
   min-height: 60vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+  box-shadow: var(--box-shadow-dark);
 }
 
 .contact-title {
   text-align: center;
-  font-size: 2.2rem;
+  font-size: 2.8rem;
   margin-bottom: 15px;
-  color: #81e6d9;
+  color: var(--text-primary-color);
 }
 
 .contact-subtitle {
   text-align: center;
   font-size: 1.1rem;
   margin-bottom: 20px;
-  color: #b0b3b8;
+  color: var(--button-text-color);
 }
 
 .contact-content {
   display: flex;
   justify-content: space-between;
-  gap: 20px;
+  gap: var(--container-padding);
   flex-wrap: wrap;
 }
 
 .contact-form {
   flex: 2;
-  background: #2d2f3b;
-  padding: 20px;
+  background: var(--background-color);
+  padding: var(--container-padding);
   border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  box-shadow: var(--box-shadow-medium);
   width: 100%;
 }
 
@@ -51,34 +50,34 @@
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
-  color: #81e6d9;
+  color: var(--link-color);
 }
 
 .form-group input,
 .form-group textarea {
   width: 100%;
   padding: 10px;
-  border: 2px solid #6b7280;
+  border: 1px solid var(--icon-color);
   border-radius: 8px;
-  background-color: #1f2333;
-  color: #d1d5db;
+  background-color: var(--nav-hover-bg-color);
+  color: var(--text-primary-color);
   transition: border-color 0.3s ease;
 }
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-  color: #6b7280;
+  color: var(--button-text-color);
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
-  border-color: #81e6d9;
+  border-color: var(--link-hover-color);
   outline: none;
 }
 
 .submit-button {
-  background-color: #81e6d9;
-  color: #1f2333;
+  background-color: var(--accent-color);
+  color: var(--text-primary-color);
   padding: 10px 15px;
   border: none;
   border-radius: 8px;
@@ -98,7 +97,7 @@
   flex-direction: column;
   justify-content: flex-start;
   gap: 20px;
-  background: #2d2f3b;
+  background: var(--background-color);
   padding: 20px;
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
@@ -116,12 +115,12 @@
 }
 
 .social-icons a {
-  color: #81e6d9;
+  color: var(--text-primary-color);
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .social-icons a:hover {
-  color: #b0b3b8;
+  color: var(--icon-hover-color);
   transform: scale(1.2);
 }
 
@@ -133,8 +132,8 @@
 }
 
 .common-button {
-  background-color: #81e6d9;
-  color: #1f2333;
+  background-color: var(--accent-color);
+  color: var(--text-primary-color);
   padding: 12px 20px;
   border: none;
   border-radius: 8px;
@@ -152,7 +151,7 @@
 
 .common-button:hover,
 .submit-button:hover{
-  background-color: #4fd1c5;
+  background-color: var(--accent-hover-color);
   transform: translateY(-3px);
 }
 
@@ -174,19 +173,19 @@
   height: auto;
   margin-top: 15px;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: var(--box-shadow-medium);
 }
 
 .humor-text {
   margin-top: 10px;
-  color: #81e6d9;
+  color: var(--text-primary-color);
   font-size: 0.9rem;
 }
 
 .second-column>div>h3 {
-  font-size: 1.1rem;
+  font-size: 1rem;
   margin-bottom: 10px;
-  color: #4fd1c5;
+  color: var(--link-color);
   text-align: center;
   white-space: nowrap;
 }

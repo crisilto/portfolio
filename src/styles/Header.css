@@ -1,48 +1,47 @@
 .header {
-    display: flex;
-    height: 100vh;
-    background-color: #0e101c; 
-    color: #d1d5db; 
-  }
-  
-  .sidebar {
-    width: 250px; 
-    padding: 20px;
-    background-color: #1f2333;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    border-right: 1px solid #2d2f3b; 
-  }
-  
-  .sidebar ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .sidebar li {
-    cursor: pointer;
-    transition: color 0.3s ease, background-color 0.3s ease;
-  }
-  
-  .sidebar li:hover {
-    color: #10b981; 
-    background-color: #2d2f3b; 
-    padding-left: 5px; 
-  }
-  
-  .sidebar ul ul {
-    padding-left: 20px;
-    border-left: 1px solid #2d2f3b; 
-    margin-top: 10px;
-  }
-  
-  .sidebar ul ul li {
-    padding: 8px 0;
-    font-size: 14px;
-  }
-  
-  .sidebar ul ul li:hover {
-    color: #0ea5e9; 
-  }
-  
+  display: flex;
+  height: 100vh;
+  background-color: var(--nav-bg-color); 
+  color: var(--text-primary-color); 
+}
+
+.sidebar {
+  width: 250px;
+  padding: var(--spacing-lg);
+  background-color: var(--nav-bg-color); 
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md); 
+  border-right: 1px solid var(--nav-border-color); 
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  cursor: pointer;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.sidebar li:hover {
+  color: var(--link-hover-color); 
+  background-color: var(--background-color); 
+  padding-left: var(--spacing-sm); 
+}
+
+.sidebar ul ul {
+  padding-left: var(--spacing-md); 
+  border-left: 1px solid var(--nav-border-color); 
+  margin-top: var(--spacing-md);
+}
+
+.sidebar ul ul li {
+  padding: var(--spacing-xs) 0;
+  font-size: var(--font-size-sm); 
+}
+
+.sidebar ul ul li:hover {
+  color: var(--link-hover-color); 
+}
