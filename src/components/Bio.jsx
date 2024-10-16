@@ -18,28 +18,31 @@ const Bio = () => {
           <p>
             {language === "en" ? (
               <>
-                My name is{" "}
-                <span className="bio-keyword">Cristina Silvestre</span>, and I
-                am a junior web developer who has just completed the{" "}
+                I am <span className="bio-keyword">Cristina Silvestre</span>, a
+                junior web developer with a strong passion for technology and
+                continuous learning. I have completed the{" "}
                 <span className="bio-keyword">
                   Web Application Development - Higher Level Education Cycle
                 </span>
-                . Throughout my studies, I have acquired essential knowledge of
-                web development fundamentals, and I always strive to keep
-                learning and improving my skills.
+                , where I gained a solid foundation in the fundamental
+                principles of web development. I am currently focused on
+                expanding my skills to become a well-rounded professional and
+                preparing myself to take on challenging tasks.
               </>
             ) : (
               <>
-                Mi nombre es{" "}
-                <span className="bio-keyword">Cristina Silvestre</span>, soy una
-                desarrolladora web junior que acaba de finalizar el{" "}
+                Soy <span className="bio-keyword">Cristina Silvestre</span>, una
+                desarrolladora web junior con una gran pasión por la tecnología
+                y el aprendizaje continuo. He completado el{" "}
                 <span className="bio-keyword">
                   Ciclo Superior de Desarrollo de Aplicaciones Web
                 </span>
-                . A lo largo de mi formación, he adquirido conocimientos
-                esenciales sobre los fundamentos del desarrollo web y siempre
-                busco maneras de seguir aprendiendo, y así, poder mejorar mis
-                habilidades.
+                , donde he adquirido una sólida base de los principios
+                fundamentales del desarrollo web. 
+                <br />
+                Actualmente, estoy enfocada en
+                ampliar mis habilidades para convertirme en una profesional
+                completa y preparándome para afrontar desafíos exigentes.
               </>
             )}
           </p>
@@ -53,49 +56,56 @@ const Bio = () => {
                 <li>
                   <span className="bio-keyword">HTML5, CSS3</span>, and{" "}
                   <span className="bio-keyword">PHP</span>: Experience in
-                  creating and managing dynamic content for websites.
+                  creating and managing dynamic content for websites, with a
+                  focus on optimization and best practices.
                 </li>
                 <li>
                   <span className="bio-keyword">Java</span> and{" "}
-                  <span className="bio-keyword">JavaScript</span>: Applied
-                  programming logic and data manipulation in projects.
+                  <span className="bio-keyword">JavaScript</span>: Application
+                  of programming logic in web projects and efficient data
+                  handling to create robust and scalable solutions.
                 </li>
                 <li>
                   <span className="bio-keyword">SQL</span> and{" "}
-                  <span className="bio-keyword">MySQL</span>: Skills to perform
-                  queries and manage data, preparing for more complex
-                  environments.
+                  <span className="bio-keyword">MySQL</span>: Database
+                  management and creation of optimized queries, preparing me to
+                  work in more complex data environments.
                 </li>
                 <li>
-                  Currently learning{" "}
-                  <span className="bio-keyword">Spring Boot</span> and{" "}
-                  <span className="bio-keyword">React</span> for backend
-                  development and modern user interfaces.
+                  I am expanding my knowledge in{" "}
+                  <span className="bio-keyword">Spring Boot</span> for backend
+                  development and <span className="bio-keyword">React</span> to
+                  build modern, dynamic user interfaces, with the goal of
+                  integrating them into future projects.
                 </li>
               </>
             ) : (
               <>
                 <li>
                   <span className="bio-keyword">HTML5, CSS3</span> y{" "}
-                  <span className="bio-keyword">PHP</span>: Experiencia en crear
-                  y gestionar contenido dinámico para sitios web.
+                  <span className="bio-keyword">PHP</span>: Experiencia en la
+                  creación y gestión de contenido dinámico para sitios web, con
+                  un enfoque en optimización y buenas prácticas.
                 </li>
                 <li>
                   <span className="bio-keyword">Java</span> y{" "}
                   <span className="bio-keyword">JavaScript</span>: Aplicación de
-                  lógica de programación y manipulación de datos en proyectos.
+                  lógica de programación en proyectos web y manejo eficiente de
+                  datos para crear soluciones robustas y escalables.
                 </li>
                 <li>
                   <span className="bio-keyword">SQL</span> y{" "}
-                  <span className="bio-keyword">MySQL</span>: Habilidades para
-                  realizar consultas y gestionar datos, preparándome para
-                  entornos más complejos.
+                  <span className="bio-keyword">MySQL</span>: Gestión de bases
+                  de datos y creación de consultas optimizadas, lo que me
+                  prepara para trabajar en entornos más complejos de datos.
                 </li>
                 <li>
                   Actualmente aprendiendo{" "}
-                  <span className="bio-keyword">Spring Boot</span> y{" "}
-                  <span className="bio-keyword">React</span> para desarrollo
-                  backend e interfaces de usuario modernas.
+                  <span className="bio-keyword">Spring Boot</span> para
+                  desarrollo backend y{" "}
+                  <span className="bio-keyword">React</span> para construir
+                  interfaces de usuario modernas y dinámicas, con el objetivo de
+                  integrarlos en futuros proyectos.
                 </li>
               </>
             )}
@@ -107,18 +117,23 @@ const Bio = () => {
           <p>
             {language === "en" ? (
               <>
-                I am looking for an opportunity to{" "}
-                <span className="bio-keyword"> apply my knowledge</span>, grow
-                as a developer, and contribute meaningfully to a team while
-                working in an innovative and collaborative environment.
+                My goal is to be part of an innovative team where{" "}
+                <span className="bio-keyword">I can apply my knowledge </span>
+                and learn from experienced professionals.
+                <br />
+                Being able to grow in a real-world, collaborative environment
+                that promotes continuous learning and best practices would be
+                incredible for me.
               </>
             ) : (
               <>
-                Estoy buscando una oportunidad para{" "}
-                <span className="bio-keyword">aplicar mis conocimientos</span>,
-                crecer como desarrolladora y aportar de manera significativa a
-                un equipo mientras trabajo en un entorno innovador y
-                colaborativo.
+                Mi meta es formar parte de un equipo innovador donde pueda{" "}
+                <span className="bio-keyword">aplicar mis conocimientos</span> y
+                aprender de profesionales con experiencia.
+                <br />
+                Poder crecer en un entorno real y colaborativo donde se fomente
+                el aprendizaje continuo y las buenas prácticas sería increíble
+                para mí.
               </>
             )}
           </p>
@@ -129,20 +144,26 @@ const Bio = () => {
           <p>
             {language === "en" ? (
               <>
-                When I&#39;m not programming, I clear my mind by exercising,
-                which is very important to me. Although what I enjoy most is
-                spending time with my <span className="hover-cats">cats</span>{" "}
-                giving them the love they deserve &#40;with some videos about
-                new tech trends in the background&#41;.
+                When I&#39;m not coding, I clear my mind by working out, which
+                is very important to me. I also enjoy playing board games,
+                billiards, bowling... anything that keeps my logic active.
+                <br />
+                However, what I enjoy the most is spending time with{" "}
+                <span className="hover-cats">my cats</span> giving them the love
+                they deserve &#40;with a cup of coffee and a tech trends video
+                playing in the background&#41;.
               </>
             ) : (
               <>
                 Cuando no estoy programando, despejo la mente haciendo deporte,
-                algo que es muy importante para mí. Aunque lo que más disfruto
-                es pasar tiempo con mis{" "}
-                <span className="hover-cats">gatos</span> dándoles el cariño que
-                merecen &#40;y con algún vídeo sobre nuevas tendencias tech de
-                fondo&#41;.
+                algo que es muy importante para mí. También, me gusta jugar a
+                juegos de mesa, al billar, los bolos... todo aquello que
+                mantenga mi lógica activa.
+                <br />
+                Aunque lo que más disfruto es pasar tiempo con{" "}
+                <span className="hover-cats">mis gatos</span> dándoles el cariño
+                que merecen &#40;con una taza de café y con algún vídeo sobre
+                nuevas tendencias tech de fondo&#41;.
               </>
             )}
           </p>
